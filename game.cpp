@@ -14,51 +14,71 @@ Game::~Game() {}
 void Game::setStartBord()
 {
 
-    Pion* pion_w = new Pion(wit);
-    Pion* pion_z = new Pion(zwart);
-    Toren* rook_w = new Toren(wit);
-    Toren* rook_z = new Toren(zwart);
-    Loper* bishop_w = new Loper(wit);
-    Loper* bishop_z = new Loper(zwart);
-    Paard* horse_w = new Paard(wit);
-    Paard* horse_z = new Paard(zwart);
-    Koning* king_w = new Koning(wit);
-    Koning* king_z = new Koning(zwart);
-    Koningin* queen_w = new Koningin(wit);
-    Koningin* queen_z = new Koningin(zwart);
+
+
+
+
+
+
+
+
+
+
     for(int rij = 0; rij <= 7;rij++){
         for(int kolom=0; kolom <= 7;kolom++)
         {
             // set pawns
-            setPiece(1,kolom, pion_z);
-            setPiece(6,kolom,pion_w);
+            if(rij == 1)
+            {
+                Pion* pion_z = new Pion(zwart);
+                setPiece(1,kolom, pion_z);
+                pion_z->setTypePiece("pion");
+                continue;
+            }
+            if(rij == 6)
+            {
+                Pion* pion_w = new Pion(wit);
+                setPiece(6,kolom,pion_w);
+                pion_w->setTypePiece("pion");
+                continue;
+            }
             // set black pieces
             if(rij == 0)
             {
                 // set rooks
                 if(kolom == 0 || kolom == 7)
                 {
+                    Toren* rook_z = new Toren(zwart);
                     setPiece(rij,kolom,rook_z);
+                    rook_z->setTypePiece("rook");
                 }
                 // set bishop
-                if(kolom == 1 || kolom == 6)
-                {
-                    setPiece(rij,kolom,bishop_z);
-                }
-                // set horse
                 if(kolom == 2 || kolom == 5)
                 {
+                    Loper* bishop_z = new Loper(zwart);
+                    setPiece(rij,kolom,bishop_z);
+                    bishop_z->setTypePiece("bishop");
+                }
+                // set horse
+                if(kolom == 1 || kolom == 6)
+                {
+                    Paard* horse_z = new Paard(zwart);
                     setPiece(rij,kolom,horse_z);
+                    horse_z->setTypePiece("horse");
                 }
                 // set queen
                 if(kolom == 4)
                 {
+                    Koningin* queen_z = new Koningin(zwart);
                     setPiece(rij,kolom,queen_z);
+                    queen_z->setTypePiece("queen");
                 }
                 // set king
                 if(kolom == 3)
                 {
+                    Koning* king_z = new Koning(zwart);
                     setPiece(rij,kolom,king_z);
+                    king_z->setTypePiece("king");
                 }
             }
             // set white pieces
@@ -67,27 +87,37 @@ void Game::setStartBord()
                 // set rooks
                 if(kolom == 0 || kolom == 7)
                 {
+                    Toren* rook_w = new Toren(wit);
                     setPiece(rij,kolom,rook_w);
+                    rook_w->setTypePiece("rook");
                 }
                 // set bishop
-                if(kolom == 1 || kolom == 6)
-                {
-                    setPiece(rij,kolom,bishop_w);
-                }
-                // set horse
                 if(kolom == 2 || kolom == 5)
                 {
+                    Loper* bishop_w = new Loper(wit);
+                    setPiece(rij,kolom,bishop_w);
+                    bishop_w->setTypePiece("bishop");
+                }
+                // set horse
+                if(kolom == 1 || kolom == 6)
+                {
+                    Paard* horse_w = new Paard(wit);
                     setPiece(rij,kolom,horse_w);
+                    horse_w->setTypePiece("horse");
                 }
                 // set queen
                 if(kolom == 3)
                 {
+                    Koningin* queen_w = new Koningin(wit);
                     setPiece(rij,kolom,queen_w);
+                    queen_w->setTypePiece("queen");
                 }
                 // set king
                 if(kolom == 4)
                 {
+                    Koning* king_w = new Koning(wit);
                     setPiece(rij,kolom,king_w);
+                    king_w->setTypePiece("king");
                 }
             }
             else
@@ -113,7 +143,9 @@ bool Game::move(SchaakStuk* s, int r, int k) {
     {
         if(new_move == moves)
         {
-            move(s,r,k);
+            bord[r][k] = NULL;
+            this->setPiece(r,k,s);
+
             return true;
         }
         else
@@ -152,6 +184,8 @@ SchaakStuk* Game::getPiece(int r, int k) {
     return nullptr;
 }
 
+
+
 // Zet het schaakstuk waar s naar verwijst neer op rij r, kolom k.
 // Als er al een schaakstuk staat, wordt het overschreven.
 // Bewaar in jouw datastructuur de *pointer* naar het schaakstuk,
@@ -160,5 +194,9 @@ void Game::setPiece(int r, int k, SchaakStuk* s)
 {
     // Hier komt jouw code om een stuk neer te zetten op het bord
     bord[r][k] = s;
+    if (s != NULL){
+        s->setK(k);
+        s->setR(r);
+    }
 }
 

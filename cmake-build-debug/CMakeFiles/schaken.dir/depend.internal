@@ -74,9 +74,9 @@ CMakeFiles/schaken.dir/guicode/message.cpp.o
  /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QMessageBox
  /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
 CMakeFiles/schaken.dir/main.cpp.o
- ../game.h
  /Users/davidscalais/CLionProjects/chess/SchaakGUI.h
  /Users/davidscalais/CLionProjects/chess/SchaakStuk.h
+ /Users/davidscalais/CLionProjects/chess/game.h
  /Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.h
  /Users/davidscalais/CLionProjects/chess/guicode/chessboard.h
  /Users/davidscalais/CLionProjects/chess/main.cpp

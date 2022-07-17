@@ -22,6 +22,19 @@ void SchaakGUI::clicked(int r, int k) {
 
     // Volgende schaakstukken worden aangemaakt om het voorbeeld te illustreren.
     // In jouw geval zullen de stukken uit game g komen
+    Game g;
+    g.setStartBord();
+    SchaakStuk *s;
+    if (displayKills()){
+        s = g.getPiece(r,k);
+    }
+    if(displayKills())
+    {
+        g.move(s,2,k);
+        this->setItem(2,k,s);
+        //this->update();
+    }
+    /*
     SchaakStuk* p1=new Pion(zwart);
     SchaakStuk* p2=new Pion(zwart);
     SchaakStuk* Q=new Koningin(zwart);
@@ -118,6 +131,7 @@ void SchaakGUI::clicked(int r, int k) {
     delete P;
     delete L;
     delete Kw;
+     */
 }
 
 void SchaakGUI::newGame()

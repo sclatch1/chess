@@ -6,21 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../SchaakStuk.h
-guicode/chessboard.h
-../guicode/chessboard.h
-utility
--
-
 ../game.h
 vector
 -
 SchaakStuk.h
 ../SchaakStuk.h
-
-../guicode/chessboard.h
-QGraphicsScene
--
 
 /Users/davidscalais/CLionProjects/chess/SchaakGUI.cpp
 SchaakGUI.h
@@ -40,60 +30,10 @@ QMessageBox
 QAction
 -
 
-/Users/davidscalais/CLionProjects/chess/SchaakStuk.cpp
-SchaakStuk.h
-/Users/davidscalais/CLionProjects/chess/SchaakStuk.h
-game.h
-/Users/davidscalais/CLionProjects/chess/game.h
-
 /Users/davidscalais/CLionProjects/chess/SchaakStuk.h
 guicode/chessboard.h
 /Users/davidscalais/CLionProjects/chess/guicode/chessboard.h
 utility
--
-
-/Users/davidscalais/CLionProjects/chess/cmake-build-debug/schaken_autogen/C3EZHT2PJ7/moc_ChessWindow.cpp
-memory
--
-../../../guicode/ChessWindow.h
-/Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/Users/davidscalais/CLionProjects/chess/cmake-build-debug/schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp
-memory
--
-../../../guicode/chessboard.h
-/Users/davidscalais/CLionProjects/chess/guicode/chessboard.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/Users/davidscalais/CLionProjects/chess/cmake-build-debug/schaken_autogen/mocs_compilation.cpp
-C3EZHT2PJ7/moc_ChessWindow.cpp
-/Users/davidscalais/CLionProjects/chess/cmake-build-debug/schaken_autogen/C3EZHT2PJ7/moc_ChessWindow.cpp
-C3EZHT2PJ7/moc_chessboard.cpp
-/Users/davidscalais/CLionProjects/chess/cmake-build-debug/schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp
-
-/Users/davidscalais/CLionProjects/chess/game.cpp
-game.h
-/Users/davidscalais/CLionProjects/chess/game.h
-SchaakStuk.h
-/Users/davidscalais/CLionProjects/chess/SchaakStuk.h
-
-/Users/davidscalais/CLionProjects/chess/game.h
-vector
--
-SchaakStuk.h
-/Users/davidscalais/CLionProjects/chess/SchaakStuk.h
-
-/Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.cpp
-ChessWindow.h
-/Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.h
-QtWidgets
 -
 
 /Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.h
@@ -117,12 +57,6 @@ QFile
 /Users/davidscalais/CLionProjects/chess/guicode/message.h
 QString
 -
-
-/Users/davidscalais/CLionProjects/chess/main.cpp
-QApplication
--
-SchaakGUI.h
-/Users/davidscalais/CLionProjects/chess/SchaakGUI.h
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/QFile
 qfile.h
@@ -204,10 +138,6 @@ QtGui/qtouchdevice.h
 qaction.h
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qaction.h
 
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QApplication
-qapplication.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
-
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene
 qgraphicsscene.h
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h
@@ -234,24 +164,6 @@ QtCore/qvariant.h
 QtGui/qicon.h
 -
 QtWidgets/qactiongroup.h
--
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
-QtWidgets/qtwidgetsglobal.h
--
-QtCore/qcoreapplication.h
--
-QtGui/qwindowdefs.h
--
-QtCore/qpoint.h
--
-QtCore/qsize.h
--
-QtGui/qcursor.h
--
-QtWidgets/qdesktopwidget.h
--
-QtGui/qguiapplication.h
 -
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h
@@ -285,6 +197,4 @@ QtWidgets/qtwidgetsglobal.h
 -
 QtWidgets/qdialog.h
 -
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/QtWidgets
 

@@ -27,6 +27,23 @@ public:
     vector<pair<int,int>> geldige_zetten(Game& game);
 private:
     zw kleur;
+    int r;
+    int k;
+public:
+    const string &getTypePiece() const;
+
+    void setTypePiece(const string &typePiece);
+
+private:
+    string typePiece;
+public:
+    int getR() const;
+
+    void setR(int r);
+
+    int getK() const;
+
+    void setK(int k);
 };
 
 class Pion:public SchaakStuk {
@@ -35,6 +52,7 @@ public:
     virtual Piece piece() const override {
         return Piece(Piece::Pawn,getKleur()==wit?Piece::White:Piece::Black);
     }
+    vector<pair<int,int>> geldige_zetten(Game& game);
 };
 
 class Toren:public SchaakStuk {
