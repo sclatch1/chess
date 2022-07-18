@@ -39,11 +39,11 @@ protected:
     bool displayMoves();
     bool displayThreats();
 
+
 private:
     QAction* display_moves;
     QAction* display_kills;
     QAction* display_threats;
-    ChessBoard *scene;
 private slots:
     void slot_clicked(int x, int y) {clicked(x,y);}
     void slot_newGame() {newGame();}
@@ -67,7 +67,7 @@ private:
     QMenu *fileMenu;
     QMenu *gameMenu;
     QMenu *visualizeMenu;
-
+    ChessBoard *scene;
     QAction *newAct;
     QAction *openAct;
     QAction *saveAct;

@@ -13,17 +13,6 @@ Game::~Game() {}
 // Zet het bord klaar; voeg de stukken op de juiste plaats toe
 void Game::setStartBord()
 {
-
-
-
-
-
-
-
-
-
-
-
     for(int rij = 0; rij <= 7;rij++){
         for(int kolom=0; kolom <= 7;kolom++)
         {
@@ -139,20 +128,17 @@ void Game::setStartBord()
 // Anders wordt de move uitgevoerd en wordt true teruggegeven
 bool Game::move(SchaakStuk* s, int r, int k) {
     pair<int,int> new_move = make_pair(r,k);
-    for(pair<int,int> moves : s->geldige_zetten(*this))
+    vector<pair<int,int>> geldig_moves = s->geldige_zetten(*this);
+    for(pair<int,int> moves : geldig_moves)
     {
         if(new_move == moves)
         {
-            bord[r][k] = NULL;
+            bord[s->getR()][s->getK()] = nullptr;
             this->setPiece(r,k,s);
-
             return true;
         }
-        else
-        {
-            return false;
-        }
     }
+    return false;
 }
 
 // Geeft true als kleur schaak staat

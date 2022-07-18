@@ -19,6 +19,8 @@ guicode/message.h
 /Users/davidscalais/CLionProjects/chess/guicode/message.h
 guicode/fileIO.h
 /Users/davidscalais/CLionProjects/chess/guicode/fileIO.h
+iostream
+-
 
 /Users/davidscalais/CLionProjects/chess/SchaakGUI.h
 guicode/ChessWindow.h

@@ -1,0 +1,4 @@
+/Users/davidscalais/CLionProjects/chess/build/CMakeFiles/schaken.dir
+/Users/davidscalais/CLionProjects/chess/build/CMakeFiles/edit_cache.dir
+/Users/davidscalais/CLionProjects/chess/build/CMakeFiles/rebuild_cache.dir
+/Users/davidscalais/CLionProjects/chess/build/CMakeFiles/schaken_autogen.dir

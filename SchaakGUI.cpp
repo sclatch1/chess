@@ -5,9 +5,12 @@
 #include "SchaakGUI.h"
 #include "guicode/message.h"
 #include "guicode/fileIO.h"
+#include <iostream>
 
 // Constructor
 SchaakGUI::SchaakGUI():ChessWindow(nullptr) {
+
+    g.setStartBord();
     update();
 }
 
@@ -22,19 +25,24 @@ void SchaakGUI::clicked(int r, int k) {
 
     // Volgende schaakstukken worden aangemaakt om het voorbeeld te illustreren.
     // In jouw geval zullen de stukken uit game g komen
-    Game g;
-    g.setStartBord();
-    SchaakStuk *s;
-    if (displayKills()){
-        s = g.getPiece(r,k);
-    }
-    if(displayKills())
-    {
-        g.move(s,2,k);
-        this->setItem(2,k,s);
-        //this->update();
-    }
     /*
+    SchaakStuk *s;
+    s = g.getPiece(r,k);
+    if (s->getKleur() == wit)
+    {
+
+        g.move(s,4,k);
+
+        update();
+    }
+
+    */
+
+
+
+
+
+
     SchaakStuk* p1=new Pion(zwart);
     SchaakStuk* p2=new Pion(zwart);
     SchaakStuk* Q=new Koningin(zwart);
@@ -131,7 +139,7 @@ void SchaakGUI::clicked(int r, int k) {
     delete P;
     delete L;
     delete Kw;
-     */
+    
 }
 
 void SchaakGUI::newGame()
@@ -201,16 +209,16 @@ void SchaakGUI::visualizationChange() {
 // en maak het consistent met de game state in variabele g.
 void SchaakGUI::update()
 {
-    this->clearBoard();
-    g.setStartBord();
+    clearBoard();
     for(int rij=0;rij <= 7;rij++)
     {
         for(int kolom=0;kolom <= 7;kolom++)
         {
             if(g.getPiece(rij,kolom) != nullptr)
             {
-                setItem(rij,kolom,g.getPiece(rij,kolom));
+                this->setItem(rij,kolom,g.getPiece(rij,kolom));
             }
+
         }
     }
 }
