@@ -141,6 +141,21 @@ bool Game::move(SchaakStuk* s, int r, int k) {
     return false;
 }
 
+bool Game::moveIsPossible(SchaakStuk *s, int r, int k)
+{
+    pair<int,int> new_move = make_pair(r,k);
+    vector<pair<int,int>> geldig_moves = s->geldige_zetten(*this);
+    for(pair<int,int> moves : geldig_moves)
+    {
+        if(new_move == moves)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 // Geeft true als kleur schaak staat
 bool Game::schaak(zw kleur) {
     return false;
@@ -180,7 +195,7 @@ void Game::setPiece(int r, int k, SchaakStuk* s)
 {
     // Hier komt jouw code om een stuk neer te zetten op het bord
     bord[r][k] = s;
-    if (s != NULL){
+    if (s != nullptr){
         s->setK(k);
         s->setR(r);
     }

@@ -12,13 +12,18 @@
 
 class SchaakGUI:public ChessWindow {
 public:
+    SchaakGUI(zw kleur): kleur(kleur) {}
     SchaakGUI();
 
     void update();
-
+    zw getKleur() const { return kleur; };
+    void setKleur(zw color) {kleur = color; };
 private:
     Game g;
-
+    int clicks=0;
+    SchaakStuk* s=nullptr;
+    int turn=0;
+    zw kleur;
     void clicked(int x, int y) override;
     void newGame() override;
     void open() override;

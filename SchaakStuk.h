@@ -24,6 +24,7 @@ public:
                                         // SchaakGUI
 
     zw getKleur() const { return kleur; };
+
     vector<pair<int,int>> geldige_zetten(Game& game);
 private:
     zw kleur;
@@ -31,7 +32,8 @@ private:
     int k;
 public:
     const string &getTypePiece() const;
-
+    bool outofBound(int rij,int kolom) const;
+    bool Blocked(Game &g, SchaakStuk &s);
     void setTypePiece(const string &typePiece);
 
 private:

@@ -25,24 +25,62 @@ void SchaakGUI::clicked(int r, int k) {
 
     // Volgende schaakstukken worden aangemaakt om het voorbeeld te illustreren.
     // In jouw geval zullen de stukken uit game g komen
-    /*
-    SchaakStuk *s;
-    s = g.getPiece(r,k);
-    if (s->getKleur() == wit)
+
+
+    clicks ++;
+    if (turn%2 == 0)
     {
-
-        g.move(s,4,k);
-
-        update();
+        cout << "wit" << endl;
+        kleur = wit;
+    }
+    else if (turn%2 == 1)
+    {
+        cout << "zwart" << endl;
+        kleur = zwart;
     }
 
-    */
+    if(clicks == 1)
+    {
+        if (g.getPiece(r,k) != nullptr && g.getPiece(r,k)->getKleur() == kleur)
+        {
+            cout << "nieuw piece" << endl;
+            s = g.getPiece(r,k);
+        }
+        else{
+            clicks = 0;
+            return;
+        }
+    }
+    if (clicks == 2)
+    {
+        cout << "check en kleur is " << kleur << "en grote geldige zetten " << s->geldige_zetten(g).size() << endl;
+        if (g.moveIsPossible(s,r,k) && s->getKleur() == kleur)
+        {
+
+            cout << "geldig en kleur is " << kleur << "en grote geldige zetten " << s->geldige_zetten(g).size() << endl;
+            g.move(s,r,k);
+            update();
+            clicks = 0;
+            turn++;
+        }
+        else
+        {
+            cout << "niet geldig en clicks zijn: " << clicks << endl;
+            clicks = 0;
+            return;
+        }
+    }
 
 
 
 
 
 
+
+
+
+
+    /*
     SchaakStuk* p1=new Pion(zwart);
     SchaakStuk* p2=new Pion(zwart);
     SchaakStuk* Q=new Koningin(zwart);
@@ -139,8 +177,10 @@ void SchaakGUI::clicked(int r, int k) {
     delete P;
     delete L;
     delete Kw;
-    
+    */
 }
+
+
 
 void SchaakGUI::newGame()
 {}
