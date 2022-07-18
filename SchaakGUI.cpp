@@ -43,8 +43,9 @@ void SchaakGUI::clicked(int r, int k) {
     {
         if (g.getPiece(r,k) != nullptr && g.getPiece(r,k)->getKleur() == kleur)
         {
-            cout << "nieuw piece" << endl;
+            cout << "nieuw piece: " << g.getPiece(r,k)->getTypePiece() <<endl;
             s = g.getPiece(r,k);
+
         }
         else{
             clicks = 0;
@@ -53,11 +54,12 @@ void SchaakGUI::clicked(int r, int k) {
     }
     if (clicks == 2)
     {
-        cout << "check en kleur is " << kleur << "en grote geldige zetten " << s->geldige_zetten(g).size() << endl;
+        for (auto it : s->geldige_zetten(g))
+        {
+            cout << "r: " << it.first << " k: " << it.second << endl;
+        }
         if (g.moveIsPossible(s,r,k) && s->getKleur() == kleur)
         {
-
-            cout << "geldig en kleur is " << kleur << "en grote geldige zetten " << s->geldige_zetten(g).size() << endl;
             g.move(s,r,k);
             update();
             clicks = 0;

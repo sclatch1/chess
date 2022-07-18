@@ -12,15 +12,17 @@ using namespace std;
 vector<pair<int,int>> SchaakStuk::geldige_zetten(Game& game)
 {
     vector<pair<int,int>> legal_moves;
+    bool isQueen = false;
 
-    if (this == NULL)
+
+    if(this->getTypePiece() == "queen")
     {
-        return legal_moves;
+        isQueen = true;
     }
-    pair<int,int> coordinates;
-    pair<int,int> coordinates1;
     if (this->getTypePiece() == "pion"){
 
+        pair<int,int> coordinates;
+        pair<int,int> coordinates1;
         if (this->getKleur() == zwart)
         {
             if (this->getR() == 1){
@@ -59,25 +61,179 @@ vector<pair<int,int>> SchaakStuk::geldige_zetten(Game& game)
             }
         }
     }
-    if (this->getTypePiece() == "rook")
+    if (this->getTypePiece() == "rook" or isQueen)
     {
-        for (int i=0; i <= 7; i++)
+        bool blockedVerticalUp = false;
+        bool blockedVerticalDown = false;
+        bool blockedHorizontalUp = false;
+        bool blockedHorizontalDown = false;
+        for (int i=1; i <= 9; i++)
         {
-            //if (game.getPiece(i,this->k) != nullptr){break;}
-            if (i != this->getR() and !outofBound(i,this->k))
+            if(game.getPiece(this->r+i,k) != nullptr and !outofBound(this->r+i,k))
             {
-                pair<int,int> Rookcoordinates = make_pair(i,this->k);
+                if(game.getPiece(this->r+i,k)->getKleur() == kleur){
+
+                    blockedVerticalUp = true;
+                }
+            }
+            if (i != this->getR() and !outofBound(this->r+i,this->k) and !blockedVerticalUp)
+            {
+                pair<int,int> Rookcoordinates = make_pair(this->r+i,this->k);
                 legal_moves.push_back(Rookcoordinates);
+            }
+            if (!outofBound(this->r-i,k)){
+                if(game.getPiece(this->r-i,k) != nullptr)
+                {
+                    if(game.getPiece(this->r-i,k)->getKleur() == kleur){
+                        blockedVerticalDown = true;
+                    }
+                }
+                if (i != this->getR() and !blockedVerticalDown)
+                {
+                    pair<int,int> Rookcoordinates = make_pair(this->r-i,this->k);
+                    legal_moves.push_back(Rookcoordinates);
+                }
             }
         }
-        for (int j=0; j <= 7;j++)
+        for (int j=1; j <= 9;j++)
         {
-            //if (game.getPiece(this->r,j) != nullptr){break;}
-            if (j != this->k)
-            {
-                pair<int,int> Rookcoordinates = make_pair(this->r,j);
-                legal_moves.push_back(Rookcoordinates);
+            if (!outofBound(this->r,k+j)){
+                if(game.getPiece(this->r,k+j) != nullptr)
+                {
+                    if(game.getPiece(this->r,k+j)->getKleur() == kleur){
+                        blockedHorizontalUp = true;
+                    }
+                }
+                if (!blockedHorizontalUp)
+                {
+                    pair<int,int> Rookcoordinates = make_pair(this->r,this->k+j);
+                    legal_moves.push_back(Rookcoordinates);
+                }
             }
+            if (!outofBound(this->r,this->k-j)){
+                if(game.getPiece(this->r,k-j) != nullptr)
+                {
+                    if(game.getPiece(this->r,k-j)->getKleur() != this->getKleur()){
+
+                        blockedHorizontalDown = true;
+                    }
+                }
+                if (!blockedHorizontalDown)
+                {
+                    pair<int,int> Rookcoordinates = make_pair(this->r,this->k-j);
+                    legal_moves.push_back(Rookcoordinates);
+                }
+            }
+        }
+    }
+    if (this->getTypePiece() == "bishop" or isQueen)
+    {
+        bool blockedUpRight = false;
+        bool blockedUpLeft = false;
+        bool blockedDownRight = false;
+        bool blockedDownLeft = false;
+
+        for (int i=1; i <= 9; i++)
+        {
+            if(!outofBound(this->r+i,k+i)){
+
+                if(game.getPiece(this->r+i,k+i) != nullptr)
+                {
+                    if (game.getPiece(this->r+i,k+i)->getKleur() == kleur){
+                        blockedUpRight = true;
+                    }
+                }
+                if (!blockedUpRight)
+                {
+                    pair<int,int> Bishopcoordinates = make_pair(this->r+i,this->k+i);
+                    legal_moves.push_back(Bishopcoordinates);
+                }
+            }
+
+            if(!outofBound(this->r-i,k-i)){
+                if(game.getPiece(this->r-i,k-i) != nullptr)
+                {
+                    if (game.getPiece(this->r-i,k-i)->getKleur() == kleur){
+                        blockedDownLeft = true;
+                    }
+                }
+                if (!blockedDownLeft)
+                {
+                    pair<int,int> Bishopcoordinates = make_pair(this->r-i,this->k-i);
+                    legal_moves.push_back(Bishopcoordinates);
+                }
+            }
+
+            if(!outofBound(this->r+i,k-i)){
+                if(game.getPiece(this->r+i,k-i) != nullptr)
+                {
+                    if (game.getPiece(this->r+i,k-i)->getKleur() == kleur){
+                        blockedUpLeft = true;
+                    }
+                }
+                if (!blockedUpLeft)
+                {
+                    pair<int,int> Bishopcoordinates = make_pair(this->r+i,this->k-i);
+                    legal_moves.push_back(Bishopcoordinates);
+                }
+            }
+
+            if(!outofBound(this->r-i,k+i)){
+                if(game.getPiece(this->r-i,k+i) != nullptr)
+                {
+                    if (game.getPiece(this->r-i,k+i)->getKleur() == kleur){
+                        blockedDownRight = true;
+                    }
+                }
+                if (!blockedDownRight)
+                {
+                    pair<int,int> Bishopcoordinates = make_pair(this->r-i,this->k+i);
+                    legal_moves.push_back(Bishopcoordinates);
+                }
+            }
+        }
+    }
+    if (this->getTypePiece() == "horse")
+    {
+        if (!outofBound(r+2,k+1))
+        {
+            pair<int,int> Horsecoordinates = make_pair(this->r+2,this->k+1);
+            legal_moves.push_back(Horsecoordinates);
+        }
+        if (!outofBound(r+1,k+2))
+        {
+            pair<int,int> Horsecoordinates = make_pair(this->r+1,this->k+2);
+            legal_moves.push_back(Horsecoordinates);
+        }
+        if (!outofBound(r-1,k+2))
+        {
+            pair<int,int> Horsecoordinates = make_pair(this->r-1,this->k+2);
+            legal_moves.push_back(Horsecoordinates);
+        }
+        if (!outofBound(r-2,k+1))
+        {
+            pair<int,int> Horsecoordinates = make_pair(this->r-2,this->k+1);
+            legal_moves.push_back(Horsecoordinates);
+        }
+        if (!outofBound(r-2,k-1))
+        {
+            pair<int,int> Horsecoordinates = make_pair(this->r-2,this->k-1);
+            legal_moves.push_back(Horsecoordinates);
+        }
+        if (!outofBound(r-1,k-2))
+        {
+            pair<int,int> Horsecoordinates = make_pair(this->r-1,this->k-2);
+            legal_moves.push_back(Horsecoordinates);
+        }
+        if (!outofBound(r+1,k-2))
+        {
+            pair<int,int> Horsecoordinates = make_pair(this->r+1,this->k-2);
+            legal_moves.push_back(Horsecoordinates);
+        }
+        if (!outofBound(r+2,k-1))
+        {
+            pair<int,int> Horsecoordinates = make_pair(this->r+2,this->k-1);
+            legal_moves.push_back(Horsecoordinates);
         }
     }
     else{return legal_moves;}
