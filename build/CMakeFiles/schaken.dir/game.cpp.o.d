@@ -1,6 +1,6 @@
 CMakeFiles/schaken.dir/game.cpp.o: \
-  /Users/davidscalais/CLionProjects/chess/game.cpp \
-  /Users/davidscalais/CLionProjects/chess/game.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/game.cpp \
+  /Users/davidscalais/Desktop/IP\ c++/chess/game.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/vector \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/pthread.h \
@@ -141,8 +141,8 @@ CMakeFiles/schaken.dir/game.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/i386/_limits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/syslimits.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__split_buffer \
-  /Users/davidscalais/CLionProjects/chess/SchaakStuk.h \
-  /Users/davidscalais/CLionProjects/chess/guicode/chessboard.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/SchaakStuk.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/chessboard.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \

@@ -1,5 +1,5 @@
-/Users/davidscalais/CLionProjects/chess/build/schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp: /Users/davidscalais/CLionProjects/chess/guicode/chessboard.h \
-  /Users/davidscalais/CLionProjects/chess/build/schaken_autogen/moc_predefs.h \
+/Users/davidscalais/Desktop/IP\ c++/chess/build/schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp: /Users/davidscalais/Desktop/IP\ c++/chess/guicode/chessboard.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/build/schaken_autogen/moc_predefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/AvailabilityInternal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/AvailabilityMacros.h \

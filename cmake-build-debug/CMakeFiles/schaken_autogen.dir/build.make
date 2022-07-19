@@ -53,10 +53,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/davidscalais/CLionProjects/chess
+CMAKE_SOURCE_DIR = "/Users/davidscalais/Desktop/IP c++/chess"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/davidscalais/CLionProjects/chess/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug"
 
 # Utility rule file for schaken_autogen.
 
@@ -67,8 +67,8 @@ include CMakeFiles/schaken_autogen.dir/compiler_depend.make
 include CMakeFiles/schaken_autogen.dir/progress.make
 
 CMakeFiles/schaken_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/davidscalais/CLionProjects/chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target schaken"
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_autogen /Users/davidscalais/CLionProjects/chess/cmake-build-debug/CMakeFiles/schaken_autogen.dir/AutogenInfo.json Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target schaken"
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_autogen "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/CMakeFiles/schaken_autogen.dir/AutogenInfo.json" Debug
 
 schaken_autogen: CMakeFiles/schaken_autogen
 schaken_autogen: CMakeFiles/schaken_autogen.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/schaken_autogen.dir/clean:
 .PHONY : CMakeFiles/schaken_autogen.dir/clean
 
 CMakeFiles/schaken_autogen.dir/depend:
-	cd /Users/davidscalais/CLionProjects/chess/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/davidscalais/CLionProjects/chess /Users/davidscalais/CLionProjects/chess /Users/davidscalais/CLionProjects/chess/cmake-build-debug /Users/davidscalais/CLionProjects/chess/cmake-build-debug /Users/davidscalais/CLionProjects/chess/cmake-build-debug/CMakeFiles/schaken_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/davidscalais/Desktop/IP c++/chess" "/Users/davidscalais/Desktop/IP c++/chess" "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug" "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug" "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/CMakeFiles/schaken_autogen.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/schaken_autogen.dir/depend
 

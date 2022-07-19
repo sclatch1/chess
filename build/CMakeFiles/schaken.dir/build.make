@@ -53,10 +53,10 @@ RM = /usr/local/Cellar/cmake/3.23.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/davidscalais/CLionProjects/chess
+CMAKE_SOURCE_DIR = "/Users/davidscalais/Desktop/IP c++/chess"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/davidscalais/CLionProjects/chess/build
+CMAKE_BINARY_DIR = "/Users/davidscalais/Desktop/IP c++/chess/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/schaken.dir/depend.make
@@ -72,128 +72,128 @@ include CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o: CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o: schaken_autogen/mocs_compilation.cpp
 CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o: CMakeFiles/schaken.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o -MF CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o -c /Users/davidscalais/CLionProjects/chess/build/schaken_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o -MF CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o -c "/Users/davidscalais/Desktop/IP c++/chess/build/schaken_autogen/mocs_compilation.cpp"
 
 CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidscalais/CLionProjects/chess/build/schaken_autogen/mocs_compilation.cpp > CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidscalais/Desktop/IP c++/chess/build/schaken_autogen/mocs_compilation.cpp" > CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidscalais/CLionProjects/chess/build/schaken_autogen/mocs_compilation.cpp -o CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidscalais/Desktop/IP c++/chess/build/schaken_autogen/mocs_compilation.cpp" -o CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/schaken.dir/main.cpp.o: CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/main.cpp.o: ../main.cpp
 CMakeFiles/schaken.dir/main.cpp.o: CMakeFiles/schaken.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/schaken.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/main.cpp.o -MF CMakeFiles/schaken.dir/main.cpp.o.d -o CMakeFiles/schaken.dir/main.cpp.o -c /Users/davidscalais/CLionProjects/chess/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/schaken.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/main.cpp.o -MF CMakeFiles/schaken.dir/main.cpp.o.d -o CMakeFiles/schaken.dir/main.cpp.o -c "/Users/davidscalais/Desktop/IP c++/chess/main.cpp"
 
 CMakeFiles/schaken.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/schaken.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidscalais/CLionProjects/chess/main.cpp > CMakeFiles/schaken.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidscalais/Desktop/IP c++/chess/main.cpp" > CMakeFiles/schaken.dir/main.cpp.i
 
 CMakeFiles/schaken.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/schaken.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidscalais/CLionProjects/chess/main.cpp -o CMakeFiles/schaken.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidscalais/Desktop/IP c++/chess/main.cpp" -o CMakeFiles/schaken.dir/main.cpp.s
 
 CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o: CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o: ../guicode/ChessWindow.cpp
 CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o: CMakeFiles/schaken.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o -MF CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o.d -o CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o -c /Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o -MF CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o.d -o CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o -c "/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.cpp"
 
 CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.cpp > CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.cpp" > CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.i
 
 CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.cpp -o CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.cpp" -o CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.s
 
 CMakeFiles/schaken.dir/guicode/chessboard.cpp.o: CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/guicode/chessboard.cpp.o: ../guicode/chessboard.cpp
 CMakeFiles/schaken.dir/guicode/chessboard.cpp.o: CMakeFiles/schaken.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/schaken.dir/guicode/chessboard.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/guicode/chessboard.cpp.o -MF CMakeFiles/schaken.dir/guicode/chessboard.cpp.o.d -o CMakeFiles/schaken.dir/guicode/chessboard.cpp.o -c /Users/davidscalais/CLionProjects/chess/guicode/chessboard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/schaken.dir/guicode/chessboard.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/guicode/chessboard.cpp.o -MF CMakeFiles/schaken.dir/guicode/chessboard.cpp.o.d -o CMakeFiles/schaken.dir/guicode/chessboard.cpp.o -c "/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.cpp"
 
 CMakeFiles/schaken.dir/guicode/chessboard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/schaken.dir/guicode/chessboard.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidscalais/CLionProjects/chess/guicode/chessboard.cpp > CMakeFiles/schaken.dir/guicode/chessboard.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.cpp" > CMakeFiles/schaken.dir/guicode/chessboard.cpp.i
 
 CMakeFiles/schaken.dir/guicode/chessboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/schaken.dir/guicode/chessboard.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidscalais/CLionProjects/chess/guicode/chessboard.cpp -o CMakeFiles/schaken.dir/guicode/chessboard.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.cpp" -o CMakeFiles/schaken.dir/guicode/chessboard.cpp.s
 
 CMakeFiles/schaken.dir/game.cpp.o: CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/game.cpp.o: ../game.cpp
 CMakeFiles/schaken.dir/game.cpp.o: CMakeFiles/schaken.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/schaken.dir/game.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/game.cpp.o -MF CMakeFiles/schaken.dir/game.cpp.o.d -o CMakeFiles/schaken.dir/game.cpp.o -c /Users/davidscalais/CLionProjects/chess/game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/schaken.dir/game.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/game.cpp.o -MF CMakeFiles/schaken.dir/game.cpp.o.d -o CMakeFiles/schaken.dir/game.cpp.o -c "/Users/davidscalais/Desktop/IP c++/chess/game.cpp"
 
 CMakeFiles/schaken.dir/game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/schaken.dir/game.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidscalais/CLionProjects/chess/game.cpp > CMakeFiles/schaken.dir/game.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidscalais/Desktop/IP c++/chess/game.cpp" > CMakeFiles/schaken.dir/game.cpp.i
 
 CMakeFiles/schaken.dir/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/schaken.dir/game.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidscalais/CLionProjects/chess/game.cpp -o CMakeFiles/schaken.dir/game.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidscalais/Desktop/IP c++/chess/game.cpp" -o CMakeFiles/schaken.dir/game.cpp.s
 
 CMakeFiles/schaken.dir/SchaakStuk.cpp.o: CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/SchaakStuk.cpp.o: ../SchaakStuk.cpp
 CMakeFiles/schaken.dir/SchaakStuk.cpp.o: CMakeFiles/schaken.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/schaken.dir/SchaakStuk.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/SchaakStuk.cpp.o -MF CMakeFiles/schaken.dir/SchaakStuk.cpp.o.d -o CMakeFiles/schaken.dir/SchaakStuk.cpp.o -c /Users/davidscalais/CLionProjects/chess/SchaakStuk.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/schaken.dir/SchaakStuk.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/SchaakStuk.cpp.o -MF CMakeFiles/schaken.dir/SchaakStuk.cpp.o.d -o CMakeFiles/schaken.dir/SchaakStuk.cpp.o -c "/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.cpp"
 
 CMakeFiles/schaken.dir/SchaakStuk.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/schaken.dir/SchaakStuk.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidscalais/CLionProjects/chess/SchaakStuk.cpp > CMakeFiles/schaken.dir/SchaakStuk.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.cpp" > CMakeFiles/schaken.dir/SchaakStuk.cpp.i
 
 CMakeFiles/schaken.dir/SchaakStuk.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/schaken.dir/SchaakStuk.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidscalais/CLionProjects/chess/SchaakStuk.cpp -o CMakeFiles/schaken.dir/SchaakStuk.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.cpp" -o CMakeFiles/schaken.dir/SchaakStuk.cpp.s
 
 CMakeFiles/schaken.dir/SchaakGUI.cpp.o: CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/SchaakGUI.cpp.o: ../SchaakGUI.cpp
 CMakeFiles/schaken.dir/SchaakGUI.cpp.o: CMakeFiles/schaken.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/schaken.dir/SchaakGUI.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/SchaakGUI.cpp.o -MF CMakeFiles/schaken.dir/SchaakGUI.cpp.o.d -o CMakeFiles/schaken.dir/SchaakGUI.cpp.o -c /Users/davidscalais/CLionProjects/chess/SchaakGUI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/schaken.dir/SchaakGUI.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/SchaakGUI.cpp.o -MF CMakeFiles/schaken.dir/SchaakGUI.cpp.o.d -o CMakeFiles/schaken.dir/SchaakGUI.cpp.o -c "/Users/davidscalais/Desktop/IP c++/chess/SchaakGUI.cpp"
 
 CMakeFiles/schaken.dir/SchaakGUI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/schaken.dir/SchaakGUI.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidscalais/CLionProjects/chess/SchaakGUI.cpp > CMakeFiles/schaken.dir/SchaakGUI.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidscalais/Desktop/IP c++/chess/SchaakGUI.cpp" > CMakeFiles/schaken.dir/SchaakGUI.cpp.i
 
 CMakeFiles/schaken.dir/SchaakGUI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/schaken.dir/SchaakGUI.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidscalais/CLionProjects/chess/SchaakGUI.cpp -o CMakeFiles/schaken.dir/SchaakGUI.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidscalais/Desktop/IP c++/chess/SchaakGUI.cpp" -o CMakeFiles/schaken.dir/SchaakGUI.cpp.s
 
 CMakeFiles/schaken.dir/guicode/message.cpp.o: CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/guicode/message.cpp.o: ../guicode/message.cpp
 CMakeFiles/schaken.dir/guicode/message.cpp.o: CMakeFiles/schaken.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/schaken.dir/guicode/message.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/guicode/message.cpp.o -MF CMakeFiles/schaken.dir/guicode/message.cpp.o.d -o CMakeFiles/schaken.dir/guicode/message.cpp.o -c /Users/davidscalais/CLionProjects/chess/guicode/message.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/schaken.dir/guicode/message.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/guicode/message.cpp.o -MF CMakeFiles/schaken.dir/guicode/message.cpp.o.d -o CMakeFiles/schaken.dir/guicode/message.cpp.o -c "/Users/davidscalais/Desktop/IP c++/chess/guicode/message.cpp"
 
 CMakeFiles/schaken.dir/guicode/message.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/schaken.dir/guicode/message.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidscalais/CLionProjects/chess/guicode/message.cpp > CMakeFiles/schaken.dir/guicode/message.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidscalais/Desktop/IP c++/chess/guicode/message.cpp" > CMakeFiles/schaken.dir/guicode/message.cpp.i
 
 CMakeFiles/schaken.dir/guicode/message.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/schaken.dir/guicode/message.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidscalais/CLionProjects/chess/guicode/message.cpp -o CMakeFiles/schaken.dir/guicode/message.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidscalais/Desktop/IP c++/chess/guicode/message.cpp" -o CMakeFiles/schaken.dir/guicode/message.cpp.s
 
 CMakeFiles/schaken.dir/guicode/fileIO.cpp.o: CMakeFiles/schaken.dir/flags.make
 CMakeFiles/schaken.dir/guicode/fileIO.cpp.o: ../guicode/fileIO.cpp
 CMakeFiles/schaken.dir/guicode/fileIO.cpp.o: CMakeFiles/schaken.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/schaken.dir/guicode/fileIO.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/guicode/fileIO.cpp.o -MF CMakeFiles/schaken.dir/guicode/fileIO.cpp.o.d -o CMakeFiles/schaken.dir/guicode/fileIO.cpp.o -c /Users/davidscalais/CLionProjects/chess/guicode/fileIO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/schaken.dir/guicode/fileIO.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/schaken.dir/guicode/fileIO.cpp.o -MF CMakeFiles/schaken.dir/guicode/fileIO.cpp.o.d -o CMakeFiles/schaken.dir/guicode/fileIO.cpp.o -c "/Users/davidscalais/Desktop/IP c++/chess/guicode/fileIO.cpp"
 
 CMakeFiles/schaken.dir/guicode/fileIO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/schaken.dir/guicode/fileIO.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidscalais/CLionProjects/chess/guicode/fileIO.cpp > CMakeFiles/schaken.dir/guicode/fileIO.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidscalais/Desktop/IP c++/chess/guicode/fileIO.cpp" > CMakeFiles/schaken.dir/guicode/fileIO.cpp.i
 
 CMakeFiles/schaken.dir/guicode/fileIO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/schaken.dir/guicode/fileIO.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidscalais/CLionProjects/chess/guicode/fileIO.cpp -o CMakeFiles/schaken.dir/guicode/fileIO.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidscalais/Desktop/IP c++/chess/guicode/fileIO.cpp" -o CMakeFiles/schaken.dir/guicode/fileIO.cpp.s
 
 # Object files for target schaken
 schaken_OBJECTS = \
@@ -224,7 +224,7 @@ schaken: /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/QtWidget
 schaken: /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/QtGui
 schaken: /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/QtCore
 schaken: CMakeFiles/schaken.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable schaken"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable schaken"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/schaken.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -236,6 +236,6 @@ CMakeFiles/schaken.dir/clean:
 .PHONY : CMakeFiles/schaken.dir/clean
 
 CMakeFiles/schaken.dir/depend:
-	cd /Users/davidscalais/CLionProjects/chess/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/davidscalais/CLionProjects/chess /Users/davidscalais/CLionProjects/chess /Users/davidscalais/CLionProjects/chess/build /Users/davidscalais/CLionProjects/chess/build /Users/davidscalais/CLionProjects/chess/build/CMakeFiles/schaken.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/davidscalais/Desktop/IP c++/chess/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/davidscalais/Desktop/IP c++/chess" "/Users/davidscalais/Desktop/IP c++/chess" "/Users/davidscalais/Desktop/IP c++/chess/build" "/Users/davidscalais/Desktop/IP c++/chess/build" "/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles/schaken.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/schaken.dir/depend
 

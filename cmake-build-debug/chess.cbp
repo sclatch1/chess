@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="schaken"/>
+		<Option title="chess"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\Qt\;CMake Files\..\..\..\Qt\5.15.2\;CMake Files\..\..\..\Qt\5.15.2\clang_64\;CMake Files\..\..\..\Qt\5.15.2\clang_64\lib\;CMake Files\..\..\..\Qt\5.15.2\clang_64\lib\cmake\;CMake Files\..\..\..\Qt\5.15.2\clang_64\lib\cmake\Qt5Core\;CMake Files\..\..\..\Qt\5.15.2\clang_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\Qt\5.15.2\clang_64\lib\cmake\Qt5Gui\;"/>

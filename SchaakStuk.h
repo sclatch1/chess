@@ -35,7 +35,7 @@ public:
     bool outofBound(int rij,int kolom) const;
     bool Blocked(Game &g, SchaakStuk &s);
     void setTypePiece(const string &typePiece);
-
+    //bool SchaakStuk::canBeEaten(int row, int column, Game &g);
 private:
     string typePiece;
 public:

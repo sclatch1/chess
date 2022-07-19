@@ -1,6 +1,6 @@
 CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o: \
-  /Users/davidscalais/CLionProjects/chess/build/schaken_autogen/mocs_compilation.cpp \
-  /Users/davidscalais/CLionProjects/chess/build/schaken_autogen/C3EZHT2PJ7/moc_ChessWindow.cpp \
+  /Users/davidscalais/Desktop/IP\ c++/chess/build/schaken_autogen/mocs_compilation.cpp \
+  /Users/davidscalais/Desktop/IP\ c++/chess/build/schaken_autogen/C3EZHT2PJ7/moc_ChessWindow.cpp \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/memory \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/pthread.h \
@@ -127,7 +127,7 @@ CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o: \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/atomic \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/cassert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/assert.h \
-  /Users/davidscalais/CLionProjects/chess/build/schaken_autogen/C3EZHT2PJ7/../../../guicode/ChessWindow.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/build/schaken_autogen/C3EZHT2PJ7/../../../guicode/ChessWindow.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
@@ -275,9 +275,9 @@ CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o: \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qkeysequence.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qtabwidget.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qicon.h \
-  /Users/davidscalais/CLionProjects/chess/game.h \
-  /Users/davidscalais/CLionProjects/chess/SchaakStuk.h \
-  /Users/davidscalais/CLionProjects/chess/guicode/chessboard.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/game.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/SchaakStuk.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/chessboard.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qpen.h \
@@ -293,5 +293,5 @@ CMakeFiles/schaken.dir/schaken_autogen/mocs_compilation.cpp.o: \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qfiledevice.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qvector2d.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qtouchdevice.h \
-  /Users/davidscalais/CLionProjects/chess/build/schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp \
-  /Users/davidscalais/CLionProjects/chess/build/schaken_autogen/C3EZHT2PJ7/../../../guicode/chessboard.h
+  /Users/davidscalais/Desktop/IP\ c++/chess/build/schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp \
+  /Users/davidscalais/Desktop/IP\ c++/chess/build/schaken_autogen/C3EZHT2PJ7/../../../guicode/chessboard.h

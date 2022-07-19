@@ -1,6 +1,6 @@
 CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o: \
-  /Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.cpp \
-  /Users/davidscalais/CLionProjects/chess/guicode/ChessWindow.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/ChessWindow.cpp \
+  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/ChessWindow.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
@@ -274,9 +274,9 @@ CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o: \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qkeysequence.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qtabwidget.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qicon.h \
-  /Users/davidscalais/CLionProjects/chess/game.h \
-  /Users/davidscalais/CLionProjects/chess/SchaakStuk.h \
-  /Users/davidscalais/CLionProjects/chess/guicode/chessboard.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/game.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/SchaakStuk.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/chessboard.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qpen.h \

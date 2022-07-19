@@ -54,10 +54,10 @@ RM = /usr/local/Cellar/cmake/3.23.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/davidscalais/CLionProjects/chess
+CMAKE_SOURCE_DIR = "/Users/davidscalais/Desktop/IP c++/chess"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/davidscalais/CLionProjects/chess/build
+CMAKE_BINARY_DIR = "/Users/davidscalais/Desktop/IP c++/chess/build"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -82,14 +82,14 @@ clean: CMakeFiles/schaken_autogen.dir/clean
 CMakeFiles/schaken.dir/all: CMakeFiles/schaken_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/schaken.dir/build.make CMakeFiles/schaken.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/schaken.dir/build.make CMakeFiles/schaken.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target schaken"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target schaken"
 .PHONY : CMakeFiles/schaken.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/schaken.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidscalais/CLionProjects/chess/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/schaken.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidscalais/CLionProjects/chess/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" 0
 .PHONY : CMakeFiles/schaken.dir/rule
 
 # Convenience name for target.
@@ -108,14 +108,14 @@ CMakeFiles/schaken.dir/clean:
 CMakeFiles/schaken_autogen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/schaken_autogen.dir/build.make CMakeFiles/schaken_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/schaken_autogen.dir/build.make CMakeFiles/schaken_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/davidscalais/CLionProjects/chess/build/CMakeFiles --progress-num=11 "Built target schaken_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" --progress-num=11 "Built target schaken_autogen"
 .PHONY : CMakeFiles/schaken_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/schaken_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidscalais/CLionProjects/chess/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/schaken_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidscalais/CLionProjects/chess/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles" 0
 .PHONY : CMakeFiles/schaken_autogen.dir/rule
 
 # Convenience name for target.

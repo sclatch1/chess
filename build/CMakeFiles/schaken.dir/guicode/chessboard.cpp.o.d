@@ -1,6 +1,6 @@
 CMakeFiles/schaken.dir/guicode/chessboard.cpp.o: \
-  /Users/davidscalais/CLionProjects/chess/guicode/chessboard.cpp \
-  /Users/davidscalais/CLionProjects/chess/guicode/chessboard.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/chessboard.cpp \
+  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/chessboard.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
@@ -266,7 +266,7 @@ CMakeFiles/schaken.dir/guicode/chessboard.cpp.o: \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qsharedpointer_impl.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qfont.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qpen.h \
-  /Users/davidscalais/CLionProjects/chess/guicode/resources.h \
+  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/resources.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QtWidgets \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QtWidgetsDepends \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/QtCore \
