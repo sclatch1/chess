@@ -17,6 +17,122 @@ vector<pair<int,int>> SchaakStuk::geldige_zetten(Game& game)
     {
         isQueen = true;
     }
+    if (this->getTypePiece() == "horse")
+    {
+        int rij;
+        int kolom;
+        for (int i=1; i <= 8;i++)
+        {
+            switch (i) {
+                case 1:
+                    rij = this->r+2;
+                    kolom = this->k+1;
+                    break;
+                    case 2:
+                        rij = this->r+1;
+                        kolom = this->k+2;
+                        break;
+                        case 3:
+                            rij = this->r-1;
+                            kolom = this->k+2;
+                            break;
+                            case 4:
+                                rij = this->r-2;
+                                kolom = this->k+1;
+                                break;
+                                case 5:
+                                    rij = this->r-2;
+                                    kolom = this->k-1;
+                                    break;
+                                    case 6:
+                                        rij = this->r-1;
+                                        kolom = this->k-2;
+                                        break;
+                                        case 7:
+                                            rij = this->r+1;
+                                            kolom = this->k-2;
+                                            break;
+                                            case 8:
+                                                rij = this->r+2;
+                                                kolom = this->k-1;
+                                                break;
+            }
+            if (!outofBound(rij,kolom))
+            {
+                if(game.getPiece(rij,kolom) != nullptr)
+                {
+                    if(game.getPiece(rij,kolom)->getKleur() != kleur)
+                    {
+                        pair<int,int> Horsecoordinates = make_pair(rij,kolom);
+                        legal_moves.push_back(Horsecoordinates);
+                    }
+                }
+                else{
+                    pair<int,int> Horsecoordinates = make_pair(rij,kolom);
+                    legal_moves.push_back(Horsecoordinates);
+                }
+            }
+        }
+    }
+    if(this->typePiece == "king")
+    {
+        int rij;
+        int kolom;
+        for (int i=1; i <= 8;i++)
+        {
+            switch (i)
+            {
+                case 1:
+                    rij = this->r+1;
+                    kolom = this->k+1;
+                    break;
+                    case 2:
+                        rij = this->r;
+                        kolom = this->k+1;
+                        break;
+                        case 3:
+                            rij = this->r-1;
+                            kolom = this->k+1;
+                            break;
+                            case 4:
+                                rij = this->r-1;
+                                kolom = this->k;
+                                break;
+                                case 5:
+                                    rij = this->r-1;
+                                    kolom = this->k-1;
+                                    break;
+                                    case 6:
+                                        rij = this->r;
+                                        kolom = this->k-1;
+                                        break;
+                                        case 7:
+                                            rij = this->r+1;
+                                            kolom = this->k-1;
+                                            break;
+                                            case 8:
+                                                rij = this->r+1;
+                                                kolom = this->k;
+                                                break;
+            }
+            if (!outofBound(rij,kolom))
+            {
+                if(game.getPiece(rij,kolom) != nullptr)
+                {
+                    if (game.getPiece(rij,kolom)->getKleur() != kleur)
+                    {
+                        pair<int,int> Kingcoordinates = make_pair(rij,kolom);
+                        legal_moves.push_back(Kingcoordinates);
+                    }
+                }
+                else{
+                    pair<int,int> Kingcoordinates = make_pair(rij,kolom);
+                    legal_moves.push_back(Kingcoordinates);
+                }
+
+            }
+        }
+    }
     if (this->getTypePiece() == "pion"){
 
         pair<int,int> coordinates;
@@ -24,15 +140,18 @@ vector<pair<int,int>> SchaakStuk::geldige_zetten(Game& game)
         if (this->getKleur() == zwart)
         {
             if (this->getR() == 1){
-            //game.getPiece(r+1,k) == nullptr && !this->outofBound(r+1,k)
             if(game.getPiece(r+1,k) == nullptr && !this->outofBound(r+1,k))
             {
                     coordinates = make_pair(this->r+1,this->k);
                     coordinates1 = make_pair(this->r+2,this->k);
                     legal_moves.push_back(coordinates);
                     legal_moves.push_back(coordinates1);
-                    cout << legal_moves.size() << endl;
                 }
+            }
+            else if (game.getPiece(r+1,k) == nullptr && !this->outofBound(r+1,k))
+            {
+                coordinates = make_pair(this->r+1,this->k);
+                legal_moves.push_back(coordinates);
             }
             if(game.getPiece(r+1,k+1) != nullptr and!this->outofBound(r+1,k+1))
             {
@@ -49,11 +168,6 @@ vector<pair<int,int>> SchaakStuk::geldige_zetten(Game& game)
                     coordinates = make_pair(this->r+1,this->k-1);
                     legal_moves.push_back(coordinates);
                 }
-            }
-            if (game.getPiece(r+1,k) == nullptr && !this->outofBound(r+1,k))
-            {
-                coordinates = make_pair(this->r+1,this->k);
-                legal_moves.push_back(coordinates);
             }
         }
 
@@ -184,69 +298,10 @@ vector<pair<int,int>> SchaakStuk::geldige_zetten(Game& game)
     }
     if (this->getTypePiece() == "bishop" or isQueen)
     {
-
         bool blockedUpRight = false;
         bool blockedUpLeft = false;
         bool blockedDownRight = false;
         bool blockedDownLeft = false;
-
-        int rij;
-        int kolom;
-        /*
-        bool block = false;
-        for (int j=1;j <= 4;j++)
-        {
-            for (int i=1; i <= 9; i++){
-                switch (j) {
-                    case 1:
-                        rij = this->r+i;
-                        kolom= this->k+i;
-                        cout << "case 1" << endl;
-                        break;
-                        case 2:
-                            rij = this->r-i;
-                            kolom= this->k-i;
-                            cout << "case 2" << endl;
-                            break;
-                            case 3:
-                                rij = this->r+i;
-                                kolom= this->k-i;
-                                cout << "case 3" << endl;
-                                break;
-                                case 4:
-                                    rij = this->r-i;
-                                    kolom= this->k+i;
-                                    cout << "case 4" << endl;
-                                    break;
-                }
-
-                if(game.getPiece(rij,kolom) != nullptr)
-                {
-                    if (game.getPiece(rij,kolom)->getKleur() == kleur)
-                    {
-                        cout << "blocked by same color" << endl;
-                        block = true;
-                    }
-                    if (game.getPiece(rij,kolom)->getKleur() != kleur)
-                    {
-                        cout << "blocked by another color" << endl;
-                        pair<int,int> Bishopcoordinates = make_pair(rij,kolom);
-                        legal_moves.push_back(Bishopcoordinates);
-                        block = true;
-                    }
-                }
-                if (!block)
-                {
-                    cout << rij << "  "<< kolom << "not blocked" << endl;
-                    pair<int,int> Bishopcoordinates = make_pair(rij,kolom);
-                    legal_moves.push_back(Bishopcoordinates);
-                }
-                block = false;
-            }
-            }
-
-        */
-
 
         for (int i=1; i <= 9; i++)
         {
@@ -334,122 +389,6 @@ vector<pair<int,int>> SchaakStuk::geldige_zetten(Game& game)
 
         }
     }
-    if (this->getTypePiece() == "horse")
-    {
-        int rij;
-        int kolom;
-        for (int i=1; i <= 8;i++)
-        {
-            switch (i) {
-                case 1:
-                    rij = this->r+2;
-                    kolom = this->k+1;
-                    break;
-                case 2:
-                    rij = this->r+1;
-                    kolom = this->k+2;
-                    break;
-                case 3:
-                    rij = this->r-1;
-                    kolom = this->k+2;
-                    break;
-                case 4:
-                    rij = this->r-2;
-                    kolom = this->k+1;
-                    break;
-                case 5:
-                    rij = this->r-2;
-                    kolom = this->k-1;
-                    break;
-                case 6:
-                    rij = this->r-1;
-                    kolom = this->k-2;
-                    break;
-                case 7:
-                    rij = this->r+1;
-                    kolom = this->k-2;
-                    break;
-                case 8:
-                    rij = this->r+2;
-                    kolom = this->k-1;
-                    break;
-            }
-            if (!outofBound(rij,kolom))
-            {
-                if(game.getPiece(rij,kolom) != nullptr)
-                {
-                    if(game.getPiece(rij,kolom)->getKleur() != kleur)
-                    {
-                        pair<int,int> Horsecoordinates = make_pair(rij,kolom);
-                        legal_moves.push_back(Horsecoordinates);
-                    }
-                }
-                else{
-                    pair<int,int> Horsecoordinates = make_pair(rij,kolom);
-                    legal_moves.push_back(Horsecoordinates);
-                }
-            }
-        }
-    }
-    if(this->typePiece == "king")
-    {
-        int rij;
-        int kolom;
-        for (int i=1; i <= 8;i++)
-        {
-            switch (i)
-            {
-                case 1:
-                    rij = this->r+1;
-                    kolom = this->k+1;
-                    break;
-                case 2:
-                    rij = this->r;
-                    kolom = this->k+1;
-                    break;
-                case 3:
-                    rij = this->r-1;
-                    kolom = this->k+1;
-                    break;
-                case 4:
-                    rij = this->r-1;
-                    kolom = this->k;
-                    break;
-                case 5:
-                    rij = this->r-1;
-                    kolom = this->k-1;
-                    break;
-                case 6:
-                    rij = this->r;
-                    kolom = this->k-1;
-                    break;
-                case 7:
-                    rij = this->r+1;
-                    kolom = this->k-1;
-                    break;
-                case 8:
-                    rij = this->r+1;
-                    kolom = this->k;
-                    break;
-            }
-            if (!outofBound(rij,kolom))
-            {
-                if(game.getPiece(rij,kolom) != nullptr)
-                {
-                    if (game.getPiece(rij,kolom)->getKleur() != kleur)
-                    {
-                        pair<int,int> Kingcoordinates = make_pair(rij,kolom);
-                        legal_moves.push_back(Kingcoordinates);
-                    }
-                }
-                else{
-                    pair<int,int> Kingcoordinates = make_pair(rij,kolom);
-                    legal_moves.push_back(Kingcoordinates);
-                }
-
-            }
-        }
-    }
     else{return legal_moves;}
 
     return legal_moves;
@@ -465,17 +404,7 @@ bool SchaakStuk::outofBound(int rij,int kolom) const
     else{return true;}
 }
 
-/*
-bool SchaakStuk::canBeEaten(int row, int column, Game &g)
-{
-    return g.getPiece(row,column)->getKleur() != kleur;
-}
- */
 
-bool SchaakStuk::Blocked(Game &g,SchaakStuk &s)
-{
-
-}
 
 int SchaakStuk::getR() const {
     return r;

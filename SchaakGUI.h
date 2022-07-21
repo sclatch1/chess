@@ -24,6 +24,7 @@ private:
     SchaakStuk* s=nullptr;
     int turn=0;
     zw kleur;
+    bool schaak = false;
     void clicked(int x, int y) override;
     void newGame() override;
     void open() override;

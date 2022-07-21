@@ -27,7 +27,7 @@ public:
     SchaakStuk* getPiece(int r, int k);
     void setPiece(int r, int k, SchaakStuk* s);
     bool moveIsPossible(SchaakStuk* s, int r, int k);
-
+    bool move_back(SchaakStuk *s,SchaakStuk* temp , int r, int k);
 private:
     // Hier zet jij jouw datastructuur neer om het bord te bewaren ...
     SchaakStuk* bord[8][8];

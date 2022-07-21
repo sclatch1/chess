@@ -5,10 +5,16 @@
 
 #include "game.h"
 #include "SchaakStuk.h"
+#include "iostream"
 
-Game::Game() {}
+using namespace std;
 
-Game::~Game() {}
+Game::Game()
+{
+    { cout << "Constructor is executed\n"; }
+}
+
+Game::~Game() {{ cout << "Destructor is executed\n"; }}
 
 // Zet het bord klaar; voeg de stukken op de juiste plaats toe
 void Game::setStartBord()
@@ -56,14 +62,14 @@ void Game::setStartBord()
                     horse_z->setTypePiece("horse");
                 }
                 // set queen
-                if(kolom == 4)
+                if(kolom == 3)
                 {
                     Koningin* queen_z = new Koningin(zwart);
                     setPiece(rij,kolom,queen_z);
                     queen_z->setTypePiece("queen");
                 }
                 // set king
-                if(kolom == 3)
+                if(kolom == 4)
                 {
                     Koning* king_z = new Koning(zwart);
                     setPiece(rij,kolom,king_z);
@@ -133,12 +139,19 @@ bool Game::move(SchaakStuk* s, int r, int k) {
     {
         if(new_move == moves)
         {
-            bord[s->getR()][s->getK()] = nullptr;
+            this->setPiece(s->getR(),s->getK(), nullptr);
             this->setPiece(r,k,s);
             return true;
         }
     }
     return false;
+}
+
+bool Game::move_back(SchaakStuk *s,SchaakStuk* temp ,int r, int k)
+{
+    this->bord[s->getR()][s->getK()] = temp;
+    this->setPiece(r,k,s);
+    return true;
 }
 
 bool Game::moveIsPossible(SchaakStuk *s, int r, int k)
@@ -158,6 +171,29 @@ bool Game::moveIsPossible(SchaakStuk *s, int r, int k)
 
 // Geeft true als kleur schaak staat
 bool Game::schaak(zw kleur) {
+    for (int r=0;r <= 7;r++)
+    {
+        for (int k=0;k <= 7;k++)
+        {
+            if( this->getPiece(r,k) == nullptr )
+           {
+               continue;
+           }
+            else if (this->getPiece(r,k)->getKleur() != kleur)
+           {
+               for (auto move : this->getPiece(r,k)->geldige_zetten(*this))
+               {
+                   if (this->getPiece(move.first,move.second) != nullptr)
+                   {
+                       if (this->getPiece(move.first,move.second)->getTypePiece() == "king" and this->getPiece(move.first,move.second)->getKleur() == kleur)
+                       {
+                           return true;
+                       }
+                   }
+               }
+           }
+        }
+    }
     return false;
 }
 
@@ -194,10 +230,12 @@ SchaakStuk* Game::getPiece(int r, int k) {
 void Game::setPiece(int r, int k, SchaakStuk* s)
 {
     // Hier komt jouw code om een stuk neer te zetten op het bord
-    bord[r][k] = s;
+    this->bord[r][k] = s;
+
     if (s != nullptr){
         s->setK(k);
         s->setR(r);
     }
 }
+
 

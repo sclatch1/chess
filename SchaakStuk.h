@@ -25,7 +25,7 @@ public:
 
     zw getKleur() const { return kleur; };
 
-    vector<pair<int,int>> geldige_zetten(Game& game);
+    vector<pair<int,int>> geldige_zetten(Game& game) ;
 private:
     zw kleur;
     int r;
@@ -33,9 +33,10 @@ private:
 public:
     const string &getTypePiece() const;
     bool outofBound(int rij,int kolom) const;
-    bool Blocked(Game &g, SchaakStuk &s);
+
     void setTypePiece(const string &typePiece);
-    //bool SchaakStuk::canBeEaten(int row, int column, Game &g);
+
+
 private:
     string typePiece;
 public:
@@ -54,7 +55,6 @@ public:
     virtual Piece piece() const override {
         return Piece(Piece::Pawn,getKleur()==wit?Piece::White:Piece::Black);
     }
-    vector<pair<int,int>> geldige_zetten(Game& game);
 };
 
 class Toren:public SchaakStuk {
