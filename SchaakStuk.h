@@ -27,6 +27,7 @@ public:
 
     vector<pair<int,int>> geldige_zetten(Game& game) ;
 private:
+    vector<pair<int,int>> zetten_van_tegenstander;
     zw kleur;
     int r;
     int k;

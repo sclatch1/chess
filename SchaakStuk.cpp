@@ -129,7 +129,6 @@ vector<pair<int,int>> SchaakStuk::geldige_zetten(Game& game)
                     pair<int,int> Kingcoordinates = make_pair(rij,kolom);
                     legal_moves.push_back(Kingcoordinates);
                 }
-
             }
         }
     }

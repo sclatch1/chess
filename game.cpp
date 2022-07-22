@@ -6,6 +6,7 @@
 #include "game.h"
 #include "SchaakStuk.h"
 #include "iostream"
+#include <algorithm>
 
 using namespace std;
 
@@ -147,10 +148,11 @@ bool Game::move(SchaakStuk* s, int r, int k) {
     return false;
 }
 
-bool Game::move_back(SchaakStuk *s,SchaakStuk* temp ,int r, int k)
+bool Game::move_back(SchaakStuk *temp,SchaakStuk* piece_at_location,int r_piece_at_loc,int k_piec_at_loc)
 {
-    this->bord[s->getR()][s->getK()] = temp;
-    this->setPiece(r,k,s);
+    this->bord[temp->getR()][temp->getK()] = temp;
+
+    this->bord[r_piece_at_loc][k_piec_at_loc] = piece_at_location;
     return true;
 }
 
@@ -170,7 +172,7 @@ bool Game::moveIsPossible(SchaakStuk *s, int r, int k)
 
 
 // Geeft true als kleur schaak staat
-bool Game::schaak(zw kleur) {
+tuple<SchaakStuk*,bool> Game::schaak(zw kleur) {
     for (int r=0;r <= 7;r++)
     {
         for (int k=0;k <= 7;k++)
@@ -187,18 +189,33 @@ bool Game::schaak(zw kleur) {
                    {
                        if (this->getPiece(move.first,move.second)->getTypePiece() == "king" and this->getPiece(move.first,move.second)->getKleur() == kleur)
                        {
-                           return true;
+                           tuple<SchaakStuk*,bool> my_tuple = make_tuple(this->getPiece(move.first,move.second),true);
+                           return my_tuple;
                        }
                    }
                }
            }
         }
     }
-    return false;
+    tuple<SchaakStuk*,bool> my_tuple = make_tuple(nullptr, false);
+    return my_tuple;
 }
 
 // Geeft true als kleur schaakmat staat
 bool Game::schaakmat(zw kleur) {
+    bool result = get<1>(this->schaak(kleur));
+    bool size = get<0>(this->schaak(kleur))->geldige_zetten(*this).empty();
+    if(!size)
+    {
+        for (auto it : get<0>(this->schaak(kleur))->geldige_zetten(*this))
+        {
+            cout << "r: " << it.first << " k: " << it.second << endl;
+        }
+    }
+    if (get<1>(this->schaak(kleur)) and get<0>(this->schaak(kleur))->geldige_zetten(*this).empty())
+    {
+        return true;
+    }
     return false;
 }
 
@@ -206,6 +223,12 @@ bool Game::schaakmat(zw kleur) {
 // (pat = geen geldige zet mogelijk, maar kleur staat niet schaak;
 // dit resulteert in een gelijkspel)
 bool Game::pat(zw kleur) {
+    cout << "in functie pat" << endl;
+    if ((!get<1>(this->schaak(kleur))) and get<0>(this->schaak(kleur))->geldige_zetten(*this).empty())
+    {
+        cout << "in if statement" << endl;
+        return true;
+    }
     return false;
 }
 
@@ -221,8 +244,6 @@ SchaakStuk* Game::getPiece(int r, int k) {
     return nullptr;
 }
 
-
-
 // Zet het schaakstuk waar s naar verwijst neer op rij r, kolom k.
 // Als er al een schaakstuk staat, wordt het overschreven.
 // Bewaar in jouw datastructuur de *pointer* naar het schaakstuk,
@@ -237,5 +258,6 @@ void Game::setPiece(int r, int k, SchaakStuk* s)
         s->setR(r);
     }
 }
+
 
 

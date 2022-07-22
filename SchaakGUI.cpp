@@ -6,6 +6,7 @@
 #include "guicode/message.h"
 #include "guicode/fileIO.h"
 #include <iostream>
+#include <algorithm>
 
 // Constructor
 SchaakGUI::SchaakGUI():ChessWindow(nullptr) {
@@ -26,7 +27,7 @@ void SchaakGUI::clicked(int r, int k) {
     // Volgende schaakstukken worden aangemaakt om het voorbeeld te illustreren.
     // In jouw geval zullen de stukken uit game g komen
 
-
+    bool is_schaak = false;
     clicks ++;
     if (turn%2 == 0)
     {
@@ -40,8 +41,10 @@ void SchaakGUI::clicked(int r, int k) {
         kleur = zwart;
 
     }
+    /*
     if (schaak)
     {
+        is_schaak = true;
         if(clicks == 1)
         {
             if (g.getPiece(r,k) != nullptr && g.getPiece(r,k)->getKleur() == kleur)
@@ -71,31 +74,9 @@ void SchaakGUI::clicked(int r, int k) {
                 if (g.moveIsPossible(s,r,k) && s->getKleur() == kleur)
                 {
 
-                    //Game copy;
-                    /*
-                    Game copy = g;
-                    copy.move(s,r,k);
-                     !copy.schaak(kleur);
-                     */
-                    if (true)
-                    {
 
-                        cout << "niet meer in schaak" << endl;
-                        g.move(s,r,k);
-                        bool null = g.getPiece(r,k) == nullptr;
-                        if (null){
-                                    cout << "g.getPiece(r,k) == nullptr" << endl;
-                                }
-                        this->update();
-                        clicks = 0;
-                        turn++;
-                        schaak = false;
-                    }
-                    else
-                    {
-                        clicks = 0;
-                        return;
-                    }
+                    g.move(s,r,k);
+                    update();
                 }
                 else
                 {
@@ -106,21 +87,21 @@ void SchaakGUI::clicked(int r, int k) {
         }
 
     }
-    else{
-        if(clicks == 1)
-        {
-            if (g.getPiece(r,k) != nullptr && g.getPiece(r,k)->getKleur() == kleur)
+     */
+    if(clicks == 1)
+    {
+        if (g.getPiece(r,k) != nullptr && g.getPiece(r,k)->getKleur() == kleur)
             {
                 cout << "nieuw piece: " << g.getPiece(r,k)->getTypePiece() <<endl;
                 s = g.getPiece(r,k);
-
             }
-            else{
+        else{
                 clicks = 0;
                 return;
             }
         }
-        if (clicks == 2)
+
+    if (clicks == 2)
         {
             if(s->getR() == r and s->getK() == k)
             {
@@ -147,17 +128,40 @@ void SchaakGUI::clicked(int r, int k) {
                 }
             }
         }
-        if (g.schaak(zwart))
+        //cout << "voor pat" << endl;
+        /*
+        else if(g.pat(kleur))
         {
-            schaak = true;
-            message("zwart is in check");
+            message("pat");
+            return;
         }
-        if (g.schaak(wit))
+         */
+        if(get<1>(g.schaak(zwart)))
         {
-            schaak = true;
-            message("wit is in check");
+            cout << "schaak" << endl;
+            if (g.schaakmat(zwart))
+            {
+                cout << "in schaakmat" << endl;
+                message("zwart in schaakmat");
+                return;
+            }
+
+            message( "zwart is in check");
         }
-    }
+        if(get<1>(g.schaak(wit)))
+        {
+            cout << "schaak" << endl;
+            if (g.schaakmat(wit))
+            {
+                cout << "wit is in schaakmat" << endl;
+                message("wit is in schaakmat");
+                return;
+            }
+
+            message( "wit is in check");
+        }
+
+
     /*
     if (g.schaak(zwart))
     {

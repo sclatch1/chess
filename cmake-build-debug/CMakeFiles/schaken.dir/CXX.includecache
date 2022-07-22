@@ -6,87 +6,21 @@
 
 #IncludeRegexTransform: 
 
-../SchaakStuk.h
-guicode/chessboard.h
-../guicode/chessboard.h
-utility
--
-
-../game.h
-vector
--
-SchaakStuk.h
-../SchaakStuk.h
-
-../guicode/chessboard.h
-QGraphicsScene
--
-
-/Users/davidscalais/Desktop/IP c++/chess/SchaakGUI.cpp
-SchaakGUI.h
-/Users/davidscalais/Desktop/IP c++/chess/SchaakGUI.h
-guicode/message.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/message.h
-guicode/fileIO.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/fileIO.h
-iostream
--
-
-/Users/davidscalais/Desktop/IP c++/chess/SchaakGUI.h
-guicode/ChessWindow.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.h
-SchaakStuk.h
-/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.h
-QMessageBox
--
-QAction
--
-
-/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.cpp
-SchaakStuk.h
-/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.h
-game.h
-/Users/davidscalais/Desktop/IP c++/chess/game.h
-iostream
--
-
 /Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.h
 guicode/chessboard.h
 /Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.h
 utility
 -
-
-/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/schaken_autogen/C3EZHT2PJ7/moc_ChessWindow.cpp
-memory
--
-../../../guicode/ChessWindow.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp
-memory
--
-../../../guicode/chessboard.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/schaken_autogen/mocs_compilation.cpp
-C3EZHT2PJ7/moc_ChessWindow.cpp
-/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/schaken_autogen/C3EZHT2PJ7/moc_ChessWindow.cpp
-C3EZHT2PJ7/moc_chessboard.cpp
-/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp
 
 /Users/davidscalais/Desktop/IP c++/chess/game.cpp
 game.h
 /Users/davidscalais/Desktop/IP c++/chess/game.h
 SchaakStuk.h
 /Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.h
+iostream
+/Users/davidscalais/Desktop/IP c++/chess/iostream
+algorithm
+-
 
 /Users/davidscalais/Desktop/IP c++/chess/game.h
 vector
@@ -94,237 +28,13 @@ vector
 SchaakStuk.h
 /Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.h
 
-/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.cpp
-ChessWindow.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.h
-QtWidgets
--
-
-/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.h
-QMainWindow
--
-game.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/game.h
-SchaakStuk.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/SchaakStuk.h
-QCloseEvent
--
-
-/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.cpp
-chessboard.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.h
-resources.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/resources.h
-QtWidgets
--
-QPixmap
--
-
 /Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.h
 QGraphicsScene
 -
 
-/Users/davidscalais/Desktop/IP c++/chess/guicode/fileIO.cpp
-QFileDialog
--
-QMessageBox
--
-
-/Users/davidscalais/Desktop/IP c++/chess/guicode/fileIO.h
-QFile
--
-
-/Users/davidscalais/Desktop/IP c++/chess/guicode/message.cpp
-message.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/message.h
-QMessageBox
--
-QString
--
-
-/Users/davidscalais/Desktop/IP c++/chess/guicode/message.h
-QString
--
-
-/Users/davidscalais/Desktop/IP c++/chess/guicode/resources.h
-
-/Users/davidscalais/Desktop/IP c++/chess/main.cpp
-QApplication
--
-SchaakGUI.h
-/Users/davidscalais/Desktop/IP c++/chess/SchaakGUI.h
-game.h
-/Users/davidscalais/Desktop/IP c++/chess/game.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/QFile
-qfile.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qfile.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/QString
-qstring.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qstring.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qfile.h
-QtCore/qfiledevice.h
--
-QtCore/qstring.h
--
-stdio.h
--
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qstring.h
-QtCore/qchar.h
--
-QtCore/qbytearray.h
--
-QtCore/qrefcount.h
--
-QtCore/qnamespace.h
--
-QtCore/qstringliteral.h
--
-QtCore/qstringalgorithms.h
--
-QtCore/qstringview.h
--
-string
--
-iterator
--
-stdarg.h
--
-QtCore/qstringbuilder.h
--
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/QCloseEvent
-qevent.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qevent.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/QPixmap
-qpixmap.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qpixmap.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qevent.h
-QtGui/qtguiglobal.h
--
-QtGui/qwindowdefs.h
--
-QtGui/qregion.h
--
-QtCore/qnamespace.h
--
-QtCore/qstring.h
--
-QtGui/qkeysequence.h
--
-QtCore/qcoreevent.h
--
-QtCore/qvariant.h
--
-QtCore/qmap.h
--
-QtCore/qvector.h
--
-QtCore/qset.h
--
-QtCore/qurl.h
--
-QtCore/qfile.h
--
-QtGui/qvector2d.h
--
-QtGui/qtouchdevice.h
--
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qpixmap.h
-QtGui/qtguiglobal.h
--
-QtGui/qpaintdevice.h
--
-QtGui/qcolor.h
--
-QtCore/qnamespace.h
--
-QtCore/qstring.h
--
-QtCore/qsharedpointer.h
--
-QtGui/qimage.h
--
-QtGui/qtransform.h
--
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QAction
-qaction.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qaction.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QApplication
-qapplication.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QFileDialog
-qfiledialog.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h
-
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene
 qgraphicsscene.h
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QMainWindow
-qmainwindow.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QMessageBox
-qmessagebox.h
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qaction.h
-QtWidgets/qtwidgetsglobal.h
--
-QtGui/qkeysequence.h
--
-QtCore/qstring.h
--
-QtWidgets/qwidget.h
--
-QtCore/qvariant.h
--
-QtGui/qicon.h
--
-QtWidgets/qactiongroup.h
--
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
-QtWidgets/qtwidgetsglobal.h
--
-QtCore/qcoreapplication.h
--
-QtGui/qwindowdefs.h
--
-QtCore/qpoint.h
--
-QtCore/qsize.h
--
-QtGui/qcursor.h
--
-QtWidgets/qdesktopwidget.h
--
-QtGui/qguiapplication.h
--
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h
-QtWidgets/qtwidgetsglobal.h
--
-QtCore/qdir.h
--
-QtCore/qstring.h
--
-QtCore/qurl.h
--
-QtWidgets/qdialog.h
--
-functional
--
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h
 QtWidgets/qtwidgetsglobal.h
@@ -343,20 +53,4 @@ QtGui/qtransform.h
 -
 QtGui/qpen.h
 -
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
-QtWidgets/qtwidgetsglobal.h
--
-QtWidgets/qwidget.h
--
-QtWidgets/qtabwidget.h
--
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
-QtWidgets/qtwidgetsglobal.h
--
-QtWidgets/qdialog.h
--
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/QtWidgets
 
