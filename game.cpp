@@ -74,6 +74,8 @@ void Game::setStartBord()
                 {
                     Koning* king_z = new Koning(zwart);
                     setPiece(rij,kolom,king_z);
+                    Black_King.setR(king_z->getR());
+                    Black_King.setK(king_z->getK());
                     king_z->setTypePiece("king");
                 }
             }
@@ -113,6 +115,7 @@ void Game::setStartBord()
                 {
                     Koning* king_w = new Koning(wit);
                     setPiece(rij,kolom,king_w);
+                    set_coordinates_white_king(rij,kolom);
                     king_w->setTypePiece("king");
                 }
             }
@@ -125,10 +128,6 @@ void Game::setStartBord()
 }
 
 
-
-
-
-
 // Verplaats stuk s naar positie (r,k)
 // Als deze move niet mogelijk is, wordt false teruggegeven
 // en verandert er niets aan het schaakbord.
@@ -136,24 +135,83 @@ void Game::setStartBord()
 bool Game::move(SchaakStuk* s, int r, int k) {
     pair<int,int> new_move = make_pair(r,k);
     vector<pair<int,int>> geldig_moves = s->geldige_zetten(*this);
+    vector<pair<int,int>> sq = this->King_Under_attack(s->getKleur());
+    if(s->getTypePiece() == "king"){
+        if (!this->King_Under_attack(s->getKleur()).empty())
+        {
+            if (geldig_moves.size() != 0){
+                for (auto coordinate : geldig_moves)
+                {
+                    for (auto it : sq){
+                        if (it.first == coordinate.first and it.second == coordinate.second)
+                        {
+                            if (this->getPiece(coordinate.first,coordinate.second) == nullptr)
+                            {
+                                // erasing the coordiantes that is under attack
+                                for (int c=0;c < geldig_moves.size();c++)
+                                {
+                                    if(geldig_moves[c] == coordinate)
+                                    {
+                                        if (!geldig_moves.empty())
+                                        {
+                                            geldig_moves.erase(geldig_moves.begin()+c);
+                                                }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        for (int m = 0; m < geldig_moves.size(); m++)
+        {
+            cout << "coordinates (" << geldig_moves[m].first << "," << geldig_moves[m].second << ")" << endl;
+        }
+    }
     for(pair<int,int> moves : geldig_moves)
     {
-        if(new_move == moves)
-        {
-            this->setPiece(s->getR(),s->getK(), nullptr);
-            this->setPiece(r,k,s);
-            return true;
+
+        //cout << "r: " << moves.first << " k: " << moves.second << endl;
+        if(new_move == moves){
+            if (s->getKleur() == zwart and s->getR() == Black_King.getR() and s->getK() == Black_King.getK())
+            {
+                this->setPiece(s->getR(),s->getK(), nullptr);
+                this->setPiece(r,k,s);
+                Black_King.setK(k);
+                Black_King.setR(r);
+                return true;
+            }
+            else if (s->getKleur() == wit and s->getR() == White_king.getR() and s->getK() == White_king.getK())
+            {
+                this->setPiece(s->getR(),s->getK(), nullptr);
+                this->setPiece(r,k,s);
+                White_king.setK(k);
+                White_king.setR(r);
+                return true;
+            }
+            else
+            {
+                this->setPiece(s->getR(),s->getK(), nullptr);
+                this->setPiece(r,k,s);
+                return true;
+            }
         }
+
     }
     return false;
 }
 
-bool Game::move_back(SchaakStuk *temp,SchaakStuk* piece_at_location,int r_piece_at_loc,int k_piec_at_loc)
+void Game::set_coordinates_white_king(int r, int k)
 {
-    this->bord[temp->getR()][temp->getK()] = temp;
+    White_king.setR(r);
+    White_king.setK(k);
+}
 
-    this->bord[r_piece_at_loc][k_piec_at_loc] = piece_at_location;
-    return true;
+void Game::set_coordinates_black_king(int r, int k)
+{
+    Black_King.setR(r);
+    Black_King.setK(k);
 }
 
 bool Game::moveIsPossible(SchaakStuk *s, int r, int k)
@@ -205,12 +263,15 @@ tuple<SchaakStuk*,bool> Game::schaak(zw kleur) {
 bool Game::schaakmat(zw kleur) {
     bool result = get<1>(this->schaak(kleur));
     bool size = get<0>(this->schaak(kleur))->geldige_zetten(*this).empty();
+    SchaakStuk* s = get<0>(this->schaak(kleur));
     if(!size)
     {
-        for (auto it : get<0>(this->schaak(kleur))->geldige_zetten(*this))
+        /*
+        for (auto it : move(get<0>(this->schaak(kleur)),))
         {
-            cout << "r: " << it.first << " k: " << it.second << endl;
+            //cout << "r: " << it.first << " k: " << it.second << endl;
         }
+         */
     }
     if (get<1>(this->schaak(kleur)) and get<0>(this->schaak(kleur))->geldige_zetten(*this).empty())
     {
@@ -223,10 +284,10 @@ bool Game::schaakmat(zw kleur) {
 // (pat = geen geldige zet mogelijk, maar kleur staat niet schaak;
 // dit resulteert in een gelijkspel)
 bool Game::pat(zw kleur) {
-    cout << "in functie pat" << endl;
+    //cout << "in functie pat" << endl;
     if ((!get<1>(this->schaak(kleur))) and get<0>(this->schaak(kleur))->geldige_zetten(*this).empty())
     {
-        cout << "in if statement" << endl;
+       // cout << "in if statement" << endl;
         return true;
     }
     return false;
@@ -257,6 +318,173 @@ void Game::setPiece(int r, int k, SchaakStuk* s)
         s->setK(k);
         s->setR(r);
     }
+}
+
+vector<pair<int,int>> Game::King_Under_attack(zw kleur)
+{
+    // checking which square are under attack from the enemy piece
+    // looping over the board to see which square near the king is under attack
+    vector<pair<int,int>> Square_under_attack;
+    vector<pair<int,int>> all_moves;
+    for (int i=0; i<=7;i++)
+    {
+        for (int j=0; j<=7;j++)
+        {
+            if (this->getPiece(i,j) == nullptr)
+            {
+                continue;
+            }
+            else if (this->getPiece(i,j)->getKleur() == kleur)
+            {
+                continue;
+            }
+            else
+            {
+                all_moves = this->getPiece(i,j)->geldige_zetten(*this);
+                string piece = this->getPiece(i,j)->getTypePiece();
+                for (auto move : all_moves)
+                {
+                    if (afstand_tot_king(this->getPiece(i,j),move.first,move.second))
+                    {
+                        Square_under_attack.push_back(move);
+                    }
+                }
+                all_moves.clear();
+            }
+        }
+    }
+    return Square_under_attack;
+}
+
+void Game::Pinned_this_piece(zw kleur)
+{
+    vector<SchaakStuk*> line_of_seight;
+    vector<pair<int,int>> all_moves;
+    for (int i=0; i<=7;i++)
+    {
+        for (int j=0; j<=7;j++)
+        {
+            if (this->getPiece(i,j) == nullptr)
+            {
+                continue;
+            }
+            else if (this->getPiece(i,j)->getTypePiece() == "rook" and this->getPiece(i,j)->getKleur() != kleur)
+            {
+                all_moves = this->getPiece(i,j)->line_of_sight_rook(*this);
+                for (auto move : all_moves)
+                {
+
+                    if (kleur == wit)
+                    {
+                        if(move.first == White_king.getR() and move.second == White_king.getK())
+                        {
+                            break;
+                        }
+                        if (move.first == White_king.getR() or move.second == White_king.getK())
+                        {
+                            line_of_seight.push_back(this->getPiece(move.first,move.second));
+                        }
+                    }
+                    if (kleur == zwart)
+                    {
+                        if(move.first == Black_King.getR() and move.second == Black_King.getK())
+                        {
+                            break;
+                        }
+                        if (move.first == Black_King.getR() or move.second == Black_King.getK())
+                        {
+                            line_of_seight.push_back(this->getPiece(move.first,move.second));
+                        }
+                    }
+                }
+                if (!line_of_seight.empty()){
+                    bool found_peice = false;
+                    SchaakStuk *s = nullptr;
+                    for(int c=0; c <= line_of_seight.size()-1;c++)
+                    {
+                        if (line_of_seight[c] != nullptr)
+                        {
+                            if (line_of_seight[c]->getKleur() != kleur and !found_peice)
+                            {
+                                cout << "piece found" << endl;
+                                found_peice = true;
+                                s = line_of_seight[c];
+                            }
+                            else if (line_of_seight[c] != line_of_seight[line_of_seight.size()])
+                            {
+                                break;
+                            }
+                            cout << line_of_seight[c]->getTypePiece() << endl;
+                        }
+                        if (c == line_of_seight.size()-1)
+                        {
+                            if (s != nullptr){
+                                s->setPin(true);
+                                cout << s->getTypePiece() << " is pinned" << endl;
+                            }
+                        }
+                    }
+
+                    line_of_seight.clear();
+                }
+            }
+            else if (this->getPiece(i,j)->getTypePiece() == "bishop" and this->getPiece(i,j)->getKleur() == kleur)
+            {
+
+            }
+        }
+    }
+}
+
+bool Game::afstand_tot_king(SchaakStuk *king, int r, int k)
+{
+    int temp_r = 0;
+    int temp_k = 0;
+    for (int j = 1; j<= 8; j++)
+    {
+        switch (j) {
+            case 1:
+                temp_k = king->getK()+1;
+                temp_r = king->getR()-1;
+                break;
+                case 2:
+                    temp_k = king->getK();
+                    temp_r = king->getR()-1;
+                    break;
+                    case 3:
+                        temp_r = king->getR()-1;
+                        temp_k = king->getK()-1;
+                        break;
+                        case 4:
+                            temp_r = king->getR();
+                            temp_k = king->getK()-1;
+                            break;
+                            case 5:
+                                temp_r = king->getR();
+                                temp_k = king->getK()+1;
+                                break;
+                                case 6:
+                                    temp_r = king->getR()+1;
+                                    temp_k = king->getK()-1;
+                                    break;
+                                    case 7:
+                                        temp_r = king->getR()+1;
+                                        temp_k = king->getK();
+                                        break;
+                                        case 8:
+                                            temp_r = king->getR()+1;
+                                            temp_k = king->getK()+1;
+                                            break;
+
+        }
+        if (temp_k == k and temp_r == r)
+            {
+                //cout << "square under attack: (" << r << ", " << k << ") " << endl;
+                return true;
+            }
+        }
+    //cout << "no threat" << endl;
+    return false;
 }
 
 

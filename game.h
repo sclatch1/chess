@@ -17,21 +17,27 @@ public:
     Game();
     ~Game();
 
-    bool move(SchaakStuk* s,int r, int k); // Verplaats stuk s naar rij r en kolom k
+
 
     tuple<SchaakStuk*,bool> schaak(zw kleur);
     bool schaakmat(zw kleur);
     bool pat(zw kleur);
     void setStartBord();
-
+    bool move(SchaakStuk* s,int r, int k); // Verplaats stuk s naar rij r en kolom k
     SchaakStuk* getPiece(int r, int k);
     void setPiece(int r, int k, SchaakStuk* s);
     bool moveIsPossible(SchaakStuk* s, int r, int k);
-    bool move_back(SchaakStuk *s,SchaakStuk* temp,int r_piece_at_loc,int k_piec_at_loc);
+    void set_coordinates_white_king(int r, int k);
+    void set_coordinates_black_king(int r, int k);
+    vector<pair<int,int>> King_Under_attack(zw kleur);
+    static static bool afstand_tot_king(SchaakStuk *king, int r, int k);
+    void Pinned_this_piece(zw kleur);
 private:
     // Hier zet jij jouw datastructuur neer om het bord te bewaren ...
     SchaakStuk* bord[8][8];
-    SchaakStuk* copy_g[8][8];
+
+    Koning Black_King = Koning(zwart);
+    Koning White_king = Koning(wit);
 };
 
 

@@ -31,13 +31,18 @@ private:
     zw kleur;
     int r;
     int k;
+    bool pin= false;
+public:
+    bool isPin() const;
+    void setPin(bool pin);
+
 public:
     const string &getTypePiece() const;
-    bool outofBound(int rij,int kolom) const;
-
+    static bool outofBound(int rij,int kolom) ;
+    void PinnedIt();
     void setTypePiece(const string &typePiece);
-
-
+    vector<pair<int,int>> line_of_sight_rook(Game &game);
+    vector<pair<int,int>> line_of_sight_bishop(Game &game);
 private:
     string typePiece;
 public:
