@@ -1,5 +1,5 @@
-/Users/davidscalais/Desktop/IP\ c++/chess/build/schaken_autogen/C3EZHT2PJ7/moc_ChessWindow.cpp: /Users/davidscalais/Desktop/IP\ c++/chess/guicode/ChessWindow.h \
-  /Users/davidscalais/Desktop/IP\ c++/chess/build/schaken_autogen/moc_predefs.h \
+/Users/davidscalais/Desktop/IP\ /chess/build/schaken_autogen/C3EZHT2PJ7/moc_ChessWindow.cpp: /Users/davidscalais/Desktop/IP\ /chess/guicode/ChessWindow.h \
+  /Users/davidscalais/Desktop/IP\ /chess/build/schaken_autogen/moc_predefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/AvailabilityInternal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/AvailabilityMacros.h \
@@ -117,9 +117,9 @@
   /Library/Developer/CommandLineTools/usr/include/c++/v1/wchar.h \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/wctype.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/stdarg.h \
-  /Users/davidscalais/Desktop/IP\ c++/chess/SchaakStuk.h \
-  /Users/davidscalais/Desktop/IP\ c++/chess/game.h \
-  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/chessboard.h \
+  /Users/davidscalais/Desktop/IP\ /chess/SchaakStuk.h \
+  /Users/davidscalais/Desktop/IP\ /chess/game.h \
+  /Users/davidscalais/Desktop/IP\ /chess/guicode/chessboard.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Versions/5/Headers/qalgorithms.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Versions/5/Headers/qarraydata.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Versions/5/Headers/qatomic.h \

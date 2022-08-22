@@ -32,6 +32,7 @@ private:
     void undo() override;
     void redo() override;
     void visualizationChange() override;
+    char to_char(const string &input);
 
 /*  Overgeerfde functies van ChessWindow:
 

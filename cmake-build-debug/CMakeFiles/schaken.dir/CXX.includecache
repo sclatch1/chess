@@ -6,35 +6,169 @@
 
 #IncludeRegexTransform: 
 
-/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.h
-guicode/chessboard.h
-/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.h
-utility
--
-
-/Users/davidscalais/Desktop/IP c++/chess/game.cpp
-game.h
-/Users/davidscalais/Desktop/IP c++/chess/game.h
-SchaakStuk.h
-/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.h
-iostream
-/Users/davidscalais/Desktop/IP c++/chess/iostream
-algorithm
--
-
-/Users/davidscalais/Desktop/IP c++/chess/game.h
+../game.h
 vector
 -
 SchaakStuk.h
-/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.h
+../SchaakStuk.h
 
-/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.h
+/Users/davidscalais/Desktop/IP /chess/SchaakGUI.cpp
+SchaakGUI.h
+/Users/davidscalais/Desktop/IP /chess/SchaakGUI.h
+guicode/message.h
+/Users/davidscalais/Desktop/IP /chess/guicode/message.h
+guicode/fileIO.h
+/Users/davidscalais/Desktop/IP /chess/guicode/fileIO.h
+iostream
+-
+algorithm
+-
+
+/Users/davidscalais/Desktop/IP /chess/SchaakGUI.h
+guicode/ChessWindow.h
+/Users/davidscalais/Desktop/IP /chess/guicode/ChessWindow.h
+SchaakStuk.h
+/Users/davidscalais/Desktop/IP /chess/SchaakStuk.h
+QMessageBox
+-
+QAction
+-
+
+/Users/davidscalais/Desktop/IP /chess/SchaakStuk.h
+guicode/chessboard.h
+/Users/davidscalais/Desktop/IP /chess/guicode/chessboard.h
+utility
+-
+
+/Users/davidscalais/Desktop/IP /chess/guicode/ChessWindow.h
+QMainWindow
+-
+game.h
+/Users/davidscalais/Desktop/IP /chess/guicode/game.h
+SchaakStuk.h
+/Users/davidscalais/Desktop/IP /chess/guicode/SchaakStuk.h
+QCloseEvent
+-
+
+/Users/davidscalais/Desktop/IP /chess/guicode/chessboard.h
 QGraphicsScene
 -
+
+/Users/davidscalais/Desktop/IP /chess/guicode/fileIO.h
+QFile
+-
+
+/Users/davidscalais/Desktop/IP /chess/guicode/message.h
+QString
+-
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/QFile
+qfile.h
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qfile.h
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/QString
+qstring.h
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qstring.h
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qfile.h
+QtCore/qfiledevice.h
+-
+QtCore/qstring.h
+-
+stdio.h
+-
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qstring.h
+QtCore/qchar.h
+-
+QtCore/qbytearray.h
+-
+QtCore/qrefcount.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qstringliteral.h
+-
+QtCore/qstringalgorithms.h
+-
+QtCore/qstringview.h
+-
+string
+-
+iterator
+-
+stdarg.h
+-
+QtCore/qstringbuilder.h
+-
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/QCloseEvent
+qevent.h
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qevent.h
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qevent.h
+QtGui/qtguiglobal.h
+-
+QtGui/qwindowdefs.h
+-
+QtGui/qregion.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qstring.h
+-
+QtGui/qkeysequence.h
+-
+QtCore/qcoreevent.h
+-
+QtCore/qvariant.h
+-
+QtCore/qmap.h
+-
+QtCore/qvector.h
+-
+QtCore/qset.h
+-
+QtCore/qurl.h
+-
+QtCore/qfile.h
+-
+QtGui/qvector2d.h
+-
+QtGui/qtouchdevice.h
+-
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QAction
+qaction.h
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qaction.h
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene
 qgraphicsscene.h
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QMainWindow
+qmainwindow.h
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QMessageBox
+qmessagebox.h
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qaction.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtGui/qkeysequence.h
+-
+QtCore/qstring.h
+-
+QtWidgets/qwidget.h
+-
+QtCore/qvariant.h
+-
+QtGui/qicon.h
+-
+QtWidgets/qactiongroup.h
+-
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h
 QtWidgets/qtwidgetsglobal.h
@@ -52,5 +186,19 @@ QtGui/qfont.h
 QtGui/qtransform.h
 -
 QtGui/qpen.h
+-
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qwidget.h
+-
+QtWidgets/qtabwidget.h
+-
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qdialog.h
 -
 

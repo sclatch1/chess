@@ -1,7 +1,7 @@
 CMakeFiles/schaken.dir/SchaakStuk.cpp.o: \
-  /Users/davidscalais/Desktop/IP\ c++/chess/SchaakStuk.cpp \
-  /Users/davidscalais/Desktop/IP\ c++/chess/SchaakStuk.h \
-  /Users/davidscalais/Desktop/IP\ c++/chess/guicode/chessboard.h \
+  /Users/davidscalais/Desktop/IP\ /chess/SchaakStuk.cpp \
+  /Users/davidscalais/Desktop/IP\ /chess/SchaakStuk.h \
+  /Users/davidscalais/Desktop/IP\ /chess/guicode/chessboard.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
@@ -267,7 +267,7 @@ CMakeFiles/schaken.dir/SchaakStuk.cpp.o: \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qsharedpointer_impl.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qfont.h \
   /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qpen.h \
-  /Users/davidscalais/Desktop/IP\ c++/chess/game.h \
+  /Users/davidscalais/Desktop/IP\ /chess/game.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ios \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__locale \

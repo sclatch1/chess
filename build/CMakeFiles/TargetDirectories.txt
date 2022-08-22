@@ -1,4 +1,4 @@
-/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles/schaken.dir
-/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles/edit_cache.dir
-/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles/rebuild_cache.dir
-/Users/davidscalais/Desktop/IP c++/chess/build/CMakeFiles/schaken_autogen.dir
+/Users/davidscalais/Desktop/IP /chess/build/CMakeFiles/schaken.dir
+/Users/davidscalais/Desktop/IP /chess/build/CMakeFiles/edit_cache.dir
+/Users/davidscalais/Desktop/IP /chess/build/CMakeFiles/rebuild_cache.dir
+/Users/davidscalais/Desktop/IP /chess/build/CMakeFiles/schaken_autogen.dir

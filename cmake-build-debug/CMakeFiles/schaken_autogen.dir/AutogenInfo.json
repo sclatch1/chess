@@ -1,17 +1,17 @@
 {
-	"BUILD_DIR" : "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/schaken_autogen",
-	"CMAKE_BINARY_DIR" : "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/davidscalais/Desktop/IP c++/chess",
+	"BUILD_DIR" : "/Users/davidscalais/Desktop/IP /chess/cmake-build-debug/schaken_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/davidscalais/Desktop/IP /chess/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/davidscalais/Desktop/IP /chess/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/davidscalais/Desktop/IP /chess",
 	"CMAKE_EXECUTABLE" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/Users/davidscalais/Desktop/IP c++/chess/CMakeLists.txt",
-		"/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake",
+		"/Users/davidscalais/Desktop/IP /chess/CMakeLists.txt",
+		"/Users/davidscalais/Desktop/IP /chess/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake",
 		"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/CMakeSystemSpecificInitialize.cmake",
 		"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/Platform/Darwin-Initialize.cmake",
-		"/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake",
-		"/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake",
+		"/Users/davidscalais/Desktop/IP /chess/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake",
+		"/Users/davidscalais/Desktop/IP /chess/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake",
 		"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/CMakeSystemSpecificInformation.cmake",
 		"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/CMakeGenericSystem.cmake",
 		"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/CMakeInitializeConfigs.cmake",
@@ -74,63 +74,69 @@
 		"/Users/davidscalais/Qt/5.15.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
 		"/Users/davidscalais/Qt/5.15.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "/Users/davidscalais/Desktop/IP c++/chess",
+	"CMAKE_SOURCE_DIR" : "/Users/davidscalais/Desktop/IP /chess",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/SchaakGUI.h",
+			"/Users/davidscalais/Desktop/IP /chess/SchaakGUI.h",
 			"Mu",
 			"EWIEGA46WW/moc_SchaakGUI.cpp",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.h",
+			"/Users/davidscalais/Desktop/IP /chess/SchaakStuk.h",
 			"Mu",
 			"EWIEGA46WW/moc_SchaakStuk.cpp",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/game.h",
+			"/Users/davidscalais/Desktop/IP /chess/game.h",
 			"Mu",
 			"EWIEGA46WW/moc_game.cpp",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.h",
+			"/Users/davidscalais/Desktop/IP /chess/guicode/ChessWindow.h",
 			"Mu",
 			"C3EZHT2PJ7/moc_ChessWindow.cpp",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.h",
+			"/Users/davidscalais/Desktop/IP /chess/guicode/chessboard.h",
 			"Mu",
 			"C3EZHT2PJ7/moc_chessboard.cpp",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/guicode/fileIO.h",
+			"/Users/davidscalais/Desktop/IP /chess/guicode/fileIO.h",
 			"Mu",
 			"C3EZHT2PJ7/moc_fileIO.cpp",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/guicode/message.h",
+			"/Users/davidscalais/Desktop/IP /chess/guicode/message.h",
 			"Mu",
 			"C3EZHT2PJ7/moc_message.cpp",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/guicode/resources.h",
+			"/Users/davidscalais/Desktop/IP /chess/guicode/resources.h",
 			"Mu",
 			"C3EZHT2PJ7/moc_resources.cpp",
+			null
+		],
+		[
+			"/Users/davidscalais/Desktop/IP /chess/utilities.h",
+			"Mu",
+			"EWIEGA46WW/moc_utilities.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/schaken_autogen/include",
-	"MOC_COMPILATION_FILE" : "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/schaken_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/Users/davidscalais/Desktop/IP /chess/cmake-build-debug/schaken_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/davidscalais/Desktop/IP /chess/cmake-build-debug/schaken_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -141,8 +147,8 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug",
-		"/Users/davidscalais/Desktop/IP c++/chess",
+		"/Users/davidscalais/Desktop/IP /chess/cmake-build-debug",
+		"/Users/davidscalais/Desktop/IP /chess",
 		"/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework",
 		"/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers",
 		"/Users/davidscalais/Qt/5.15.2/clang_64/mkspecs/macx-clang",
@@ -167,43 +173,43 @@
 		"-c",
 		"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/schaken_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/Users/davidscalais/Desktop/IP /chess/cmake-build-debug/schaken_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 2,
-	"PARSE_CACHE_FILE" : "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/CMakeFiles/schaken_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/Users/davidscalais/Desktop/IP /chess/cmake-build-debug/CMakeFiles/schaken_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/Users/davidscalais/Qt/5.15.2/clang_64/bin/moc",
 	"QT_UIC_EXECUTABLE" : "",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 15,
-	"SETTINGS_FILE" : "/Users/davidscalais/Desktop/IP c++/chess/cmake-build-debug/CMakeFiles/schaken_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/Users/davidscalais/Desktop/IP /chess/cmake-build-debug/CMakeFiles/schaken_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/Users/davidscalais/Desktop/IP c++/chess/SchaakGUI.cpp", "Mu", null ],
-		[ "/Users/davidscalais/Desktop/IP c++/chess/SchaakStuk.cpp", "Mu", null ],
-		[ "/Users/davidscalais/Desktop/IP c++/chess/game.cpp", "Mu", null ],
+		[ "/Users/davidscalais/Desktop/IP /chess/SchaakGUI.cpp", "Mu", null ],
+		[ "/Users/davidscalais/Desktop/IP /chess/SchaakStuk.cpp", "Mu", null ],
+		[ "/Users/davidscalais/Desktop/IP /chess/game.cpp", "Mu", null ],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/guicode/ChessWindow.cpp",
+			"/Users/davidscalais/Desktop/IP /chess/guicode/ChessWindow.cpp",
 			"Mu",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/guicode/chessboard.cpp",
+			"/Users/davidscalais/Desktop/IP /chess/guicode/chessboard.cpp",
 			"Mu",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/guicode/fileIO.cpp",
+			"/Users/davidscalais/Desktop/IP /chess/guicode/fileIO.cpp",
 			"Mu",
 			null
 		],
 		[
-			"/Users/davidscalais/Desktop/IP c++/chess/guicode/message.cpp",
+			"/Users/davidscalais/Desktop/IP /chess/guicode/message.cpp",
 			"Mu",
 			null
 		],
-		[ "/Users/davidscalais/Desktop/IP c++/chess/main.cpp", "Mu", null ]
+		[ "/Users/davidscalais/Desktop/IP /chess/main.cpp", "Mu", null ]
 	],
 	"VERBOSITY" : 0
 }

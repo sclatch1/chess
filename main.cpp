@@ -4,7 +4,14 @@
 
 #include <QApplication>
 #include "SchaakGUI.h"
-#include "game.h"
+
+
+// DONE: In Schaakstuk geldige zetten overerving van loper en toren voor koninging
+// DONE: deep copy of game
+// TODO: schaakmat
+// TODO: threatMap, HELP functions
+// pat
+
 int main(int argc, char *argv[])
 {
 
@@ -13,13 +20,4 @@ int main(int argc, char *argv[])
     w.show();
 
     return a.exec();
-
-
-    /*
-    Game g;
-    g.setStartBord();
-    SchaakStuk* s = g.getPiece(3,1);
-    vector<pair<int,int>> v=s->geldige_zetten(g);
-    return 0;
-    */
 }

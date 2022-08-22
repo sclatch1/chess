@@ -36,6 +36,7 @@ CMakeFiles/schaken.dir/game.cpp.o: \
  ../game.cpp \
  ../game.h \
  ../guicode/chessboard.h \
+ ../utilities.h \
  /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
  /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h
 CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o: \
@@ -74,9 +75,9 @@ CMakeFiles/schaken.dir/guicode/message.cpp.o: \
  /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
  /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
 CMakeFiles/schaken.dir/main.cpp.o: \
+ ../game.h \
  ../SchaakGUI.h \
  ../SchaakStuk.h \
- ../game.h \
  ../guicode/ChessWindow.h \
  ../guicode/chessboard.h \
  ../main.cpp \
