@@ -10,89 +10,7 @@
 using namespace std;
 
 
-// next 2 functions
-// this function helps with checking for pinned piece and put all the moves the piece can do,
-// as if the board is clear of other pieces
 
-
-vector<pair<int,int>> SchaakStuk::line_of_sight_rook(Game &game)
-{
-    vector<pair<int,int>> legal_moves;
-    if (this->getTypePiece() == "rook")
-    {
-        for (int i=1; i <= 9; i++)
-        {
-
-            if (!outofBound(this->r+i,this->k))
-            {
-                pair<int,int> Rookcoordinates = make_pair(this->r+i,this->k);
-                legal_moves.push_back(Rookcoordinates);
-            }
-            if (!outofBound(this->r-i,k)){
-
-                pair<int,int> Rookcoordinates = make_pair(this->r-i,this->k);
-                legal_moves.push_back(Rookcoordinates);
-
-            }
-        }
-        for (int j=1; j <= 9;j++)
-        {
-            if (!outofBound(this->r,k+j)){
-
-                pair<int,int> Rookcoordinates = make_pair(this->r,this->k+j);
-                legal_moves.push_back(Rookcoordinates);
-
-            }
-            if (!outofBound(this->r,this->k-j)){
-
-                pair<int,int> Rookcoordinates = make_pair(this->r,this->k-j);
-                legal_moves.push_back(Rookcoordinates);
-
-            }
-        }
-    }
-    return legal_moves;
-}
-
-vector<pair<int,int>> SchaakStuk::line_of_sight_bishop(Game &game)
-{
-    vector<pair<int,int>> legal_moves;
-    if (this->getTypePiece() == "bishop")
-    {
-        for (int i=1; i <= 9; i++)
-        {
-            if(!outofBound(this->r+i,k+i)){
-
-                pair<int,int> Bishopcoordinates = make_pair(this->r+i,this->k+i);
-                legal_moves.push_back(Bishopcoordinates);
-
-            }
-
-            if(!outofBound(this->r-i,k-i)){
-
-                pair<int,int> Bishopcoordinates = make_pair(this->r-i,this->k-i);
-                legal_moves.push_back(Bishopcoordinates);
-
-            }
-
-            if(!outofBound(this->r+i,k-i)){
-
-                pair<int,int> Bishopcoordinates = make_pair(this->r+i,this->k-i);
-                legal_moves.push_back(Bishopcoordinates);
-
-            }
-
-            if(!outofBound(this->r-i,k+i)){
-
-                pair<int,int> Bishopcoordinates = make_pair(this->r-i,this->k+i);
-                legal_moves.push_back(Bishopcoordinates);
-
-            }
-
-        }
-    }
-    return legal_moves;
-}
 
 bool SchaakStuk::outofBound(int rij,int kolom)
 {
@@ -573,6 +491,8 @@ void SchaakStuk::setTypePiece(const string &typepiece) {
 //COPY FUNCTIONS
 ///////////////////////
 
+// zelfde functie als daarboven maar ze maak gebruikt van de functies en datastructuur van copy
+
 int SchaakStuk::getR_copy() const {
     return r_copy;
 }
@@ -690,8 +610,6 @@ vector<pair<int, int>> SchaakStuk::geldige_zetten_toren_copy(const Game &game) c
     }
     return legal_moves;
 }
-
-
 
 vector<pair<int, int>> Toren::geldige_zetten_copy(const Game &game) const{
     return SchaakStuk::geldige_zetten_toren_copy(game);
@@ -890,7 +808,7 @@ vector<pair<int, int>> Pion::geldige_zetten_copy(const Game &game) const {
     {
         if (this->getR_copy() == 1){
             // from the starting square a pion can move 1 or 2 square
-            if(game.getPiece_copy(r_copy+1,k_copy) == nullptr && !this->outofBound(r_copy+1,k_copy))
+            if(game.getPiece_copy(r_copy+1,k_copy) == nullptr and game.getPiece_copy(r_copy+2,k_copy) == nullptr and !this->outofBound(r_copy+1,k_copy))
             {
                 coordinates = make_pair(this->r_copy+1,this->k_copy);
                 coordinates1 = make_pair(this->r_copy+2,this->k_copy);
@@ -899,7 +817,7 @@ vector<pair<int, int>> Pion::geldige_zetten_copy(const Game &game) const {
             }
         }
         // else the pion can move one square
-        else if (game.getPiece_copy(r_copy+1,k_copy) == nullptr && !this->outofBound(r_copy+1,k_copy))
+        else if (game.getPiece_copy(r_copy+1,k_copy) == nullptr and !this->outofBound(r_copy+1,k_copy))
         {
             coordinates = make_pair(this->r_copy+1,this->k_copy);
             legal_moves.push_back(coordinates);

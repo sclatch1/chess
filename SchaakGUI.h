@@ -19,6 +19,7 @@ public:
     zw getKleur() const { return kleur; };
     void setKleur(zw color) {kleur = color; };
 private:
+    int counter =0;
     Game g;
     int clicks=0;
     SchaakStuk* s=nullptr;

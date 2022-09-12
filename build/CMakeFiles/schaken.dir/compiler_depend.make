@@ -353,7 +353,15 @@ CMakeFiles/schaken.dir/SchaakGUI.cpp.o: ../SchaakGUI.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__bsd_locale_defaults.h \
-  /Library/Developer/CommandLineTools/usr/include/c++/v1/bitset
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/bitset \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/unistd.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/unistd.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_seek_set.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/select.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_select.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_uuid_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/gethostuuid.h
 
 CMakeFiles/schaken.dir/SchaakStuk.cpp.o: ../SchaakStuk.cpp \
   ../SchaakStuk.h \
@@ -991,7 +999,8 @@ CMakeFiles/schaken.dir/game.cpp.o: ../game.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__bsd_locale_defaults.h \
-  /Library/Developer/CommandLineTools/usr/include/c++/v1/bitset
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/bitset \
+  ../utilities.h
 
 CMakeFiles/schaken.dir/guicode/ChessWindow.cpp.o: ../guicode/ChessWindow.cpp \
   ../guicode/ChessWindow.h \
@@ -3835,10 +3844,6 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qaccessiblebridge.h:
 
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsanchorlayout.h:
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qaccessible.h:
-
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qrawfont.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qimagereader.h:
@@ -3977,13 +3982,23 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcommandlineparser.h:
 
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qobject.h:
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcommandlineoption.h:
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcborstreamwriter.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qeventtransition.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qfloat16.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcborstreamreader.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qopenglframebufferobject.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcborstream.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qsemaphore.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qpauseanimation.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcbormap.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcontiguouscache.h:
 
@@ -4026,6 +4041,8 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 /Library/Developer/CommandLineTools/usr/include/c++/v1/system_error:
 
 ../SchaakStuk.cpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_select.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qcolor.h:
 
@@ -4183,6 +4200,8 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qurl.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/unistd.h:
+
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qset.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qsystemsemaphore.h:
@@ -4250,6 +4269,8 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qpixelformat.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qimage.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_seek_set.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qtransform.h:
 
@@ -4441,6 +4462,12 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qeventloop.h:
 
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qopenglversionfunctions.h:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/mutex:
+
+../utilities.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/locale.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qvector4d.h:
@@ -4483,6 +4510,8 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/cwchar:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_uuid_t.h:
+
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qlayoutitem.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qgenericpluginfactory.h:
@@ -4520,10 +4549,6 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qvector2d.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h:
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qopenglversionfunctions.h:
-
-/Library/Developer/CommandLineTools/usr/include/c++/v1/mutex:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
 
@@ -4605,8 +4630,6 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/__functional_base:
 
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcborstreamwriter.h:
-
 /Library/Developer/CommandLineTools/usr/include/c++/v1/new:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_u_int.h:
@@ -4644,6 +4667,10 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 /Library/Developer/CommandLineTools/usr/include/c++/v1/limits.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/TargetConditionals.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcommandlineoption.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qobject.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qtypetraits.h:
 
@@ -4843,6 +4870,8 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/stdio.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_posix_vdisable.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/QDeadlineTimer:
@@ -4880,10 +4909,6 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qpdfwriter.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/stddef.h:
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qopenglframebufferobject.h:
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcborstream.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/map:
 
@@ -4947,6 +4972,12 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 ../SchaakGUI.h:
 
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qtoolbar.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/time.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/select.h:
+
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qlistview.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h:
@@ -4958,12 +4989,6 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_blksize_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/libkern/i386/_OSByteOrder.h:
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qsemaphore.h:
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qpauseanimation.h:
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcbormap.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_pthread/_pthread_types.h:
 
@@ -5005,6 +5030,8 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/Availability.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/unistd.h:
+
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qiodevice.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/stdint.h:
@@ -5012,8 +5039,6 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qkeysequenceedit.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/i386/_types.h:
-
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcborstreamreader.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qtextboundaryfinder.h:
 
@@ -5051,13 +5076,15 @@ schaken_autogen/C3EZHT2PJ7/moc_chessboard.cpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_in_port_t.h:
 
-/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qtoolbar.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/time.h:
-
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtCore.framework/Headers/qcryptographichash.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/machine/signal.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsanchorlayout.h:
+
+/Users/davidscalais/Qt/5.15.2/clang_64/lib/QtGui.framework/Headers/qaccessible.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/gethostuuid.h:
 
 /Users/davidscalais/Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/qcombobox.h:
 

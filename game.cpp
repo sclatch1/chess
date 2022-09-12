@@ -1,6 +1,6 @@
 //  Student: Scalais David
 //  Rolnummer: s0206073
-//  Opmerkingen: (bvb aanpassingen van de opgave)
+//  Opmerkingen: (om de AI te laten spelen moet er nog eens op het bord worden geclicked)
 //
 
 #include "game.h"
@@ -262,6 +262,7 @@ void Game::setStartBord()
 bool Game::move(SchaakStuk* s, int r, int k) {
     pair<int,int> new_move = make_pair(r,k);
     vector<pair<int,int>> geldig_moves = s->geldige_zetten(*this);
+    // alle bedreigde plekken worden van de geldige zetten van de koning verwijdert
     if(s->getTypePiece() == "Kb" or s->getTypePiece() == "Kw"  ){
         vector<pair<int,int>> sq = this->King_Under_attack(s->getKleur());
         if (!this->King_Under_attack(s->getKleur()).empty())
@@ -291,15 +292,11 @@ bool Game::move(SchaakStuk* s, int r, int k) {
                 }
             }
         }
-        for (int m = 0; m < geldig_moves.size(); m++)
-        {
-            cout << "coordinates (" << geldig_moves[m].first << "," << geldig_moves[m].second << ")" << endl;
-        }
     }
     for(pair<int,int> moves : geldig_moves)
     {
 
-        //cout << "r: " << moves.first << " k: " << moves.second << endl;
+
         if(new_move == moves){
             if (s->getKleur() == zwart and s->getR() == Black_King.getR() and s->getK() == Black_King.getK())
             {
@@ -329,6 +326,7 @@ bool Game::move(SchaakStuk* s, int r, int k) {
     return false;
 }
 
+// zelfde als move, maar dan maakt gebruikt van de data structuur copy
 bool Game::move_copy(SchaakStuk* s,const int r,const int k) {
     pair<int,int> new_move = make_pair(r,k);
     vector<pair<int,int>> geldig_moves = s->geldige_zetten_copy(*this);
@@ -361,15 +359,10 @@ bool Game::move_copy(SchaakStuk* s,const int r,const int k) {
                 }
             }
         }
-        for (int m = 0; m < geldig_moves.size(); m++)
-        {
-            cout << "coordinates (" << geldig_moves[m].first << "," << geldig_moves[m].second << ")" << endl;
-        }
     }
     for(pair<int,int> moves : geldig_moves)
     {
 
-        //cout << "r: " << moves.first << " k: " << moves.second << endl;
         if(new_move == moves){
             if (s->getKleur_copy() == zwart and s->getR_copy() == Black_King.getR_copy() and s->getK_copy() == Black_King.getK_copy())
             {
@@ -399,7 +392,7 @@ bool Game::move_copy(SchaakStuk* s,const int r,const int k) {
     return false;
 }
 
-
+// Kijk na of een zet mogelijk is zonder het te bewegen
 bool Game::moveIsPossible(SchaakStuk *s, int r, int k)
 {
     pair<int,int> new_move = make_pair(r,k);
@@ -445,6 +438,67 @@ bool Game::moveIsPossible(SchaakStuk *s, int r, int k)
     return false;
 }
 
+// HulpFunctie Om te zien of de koning is Schaakmat staat
+bool Game::NoMove(SchaakStuk *s)
+{
+    vector<pair<int,int>> geldig_moves = s->geldige_zetten(*this);
+    vector<pair<int,int>> totaal = s->geldige_zetten(*this);
+    if(s->getTypePiece() == "Kb" or s->getTypePiece() == "Kw"  ){
+        vector<pair<int,int>> sq = this->King_Under_attack(s->getKleur());
+        if (!this->King_Under_attack(s->getKleur()).empty())
+        {
+            if (!geldig_moves.empty()){
+                for (auto coordinate : geldig_moves)
+                {
+                    if (this->getPiece(coordinate.first,coordinate.second) != nullptr)
+                    {
+                        for (int x=0;x<geldig_moves.size();x++)
+                        {
+                            if (geldig_moves[x] == coordinate and !geldig_moves.empty())
+                            {
+                                geldig_moves.erase(geldig_moves.begin()+x);
+                            }
+                        }
+                    }
+                    for (auto it : sq){
+                        if (it.first == coordinate.first and it.second == coordinate.second)
+                        {
+                            if (this->getPiece(coordinate.first,coordinate.second) == nullptr)
+                            {
+                                // erasing the coordiantes that is under attack
+                                for (int c=0;c < geldig_moves.size();c++)
+                                {
+                                    if(geldig_moves[c] == coordinate)
+                                    {
+                                        if (!geldig_moves.empty())
+                                        {
+                                            geldig_moves.erase(geldig_moves.begin()+c);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (auto it : totaal)
+        {
+            this->Make_copy();
+            this->move_copy(s,it.first,it.second);
+            if(!get<1>(this->schaak_copy(s->getKleur())))
+            {
+                geldig_moves.push_back(it);
+            }
+            delete_copy();
+        }
+    }
+
+
+    if (geldig_moves.empty()){return true;}
+    return false;
+}
 
 // Geeft true als kleur schaak staat
 tuple<SchaakStuk*,bool> Game::schaak(const zw kleur) {
@@ -476,6 +530,7 @@ tuple<SchaakStuk*,bool> Game::schaak(const zw kleur) {
     return my_tuple;
 }
 
+// zelfde als schaak maar voor de datastructuur copy
 tuple<SchaakStuk*,bool> Game::schaak_copy(const zw kleur) {
     for (int r=0;r <= 7;r++)
     {
@@ -522,24 +577,17 @@ tuple<SchaakStuk*,bool> Game::schaak_copy(const zw kleur) {
 // Geeft true als kleur schaakmat staat
 bool Game::schaakmat(const zw kleur) {
     bool result = get<1>(this->schaak(kleur));
-    bool size = get<0>(this->schaak(kleur))->geldige_zetten(*this).empty();
-    SchaakStuk* s = get<0>(this->schaak(kleur));
-    if(!size)
-    {
-        /*
-        for (auto it : move(get<0>(this->schaak(kleur)),))
-        {
-            //cout << "r: " << it.first << " k: " << it.second << endl;
-        }
-         */
+    SchaakStuk* s = nullptr;
+    if (result){
+        bool size = get<0>(this->schaak(kleur))->geldige_zetten(*this).empty();
+        s = get<0>(this->schaak(kleur));
     }
-    /*
-    if (get<1>(this->schaak(kleur)) and this->moveIsPossible(get<0>(this->schaak(kleur)),)
+
+    if (result and this->NoMove(s))
     {
         return true;
     }
-    return false;
-     */
+    else{return false;}
 }
 
 // Geeft true als kleur pat staat
@@ -547,9 +595,8 @@ bool Game::schaakmat(const zw kleur) {
 // dit resulteert in een gelijkspel)
 bool Game::pat(const zw kleur) {
     //cout << "in functie pat" << endl;
-    if ((!get<1>(this->schaak(kleur))) and get<0>(this->schaak(kleur))->geldige_zetten(*this).empty())
+    if ((!get<1>(this->schaak(kleur))) and NoMove(get<0>(this->schaak(kleur))))
     {
-       // cout << "in if statement" << endl;
         return true;
     }
     return false;
@@ -567,6 +614,7 @@ SchaakStuk* Game::getPiece(const int r,const int k) const {
     return nullptr;
 }
 
+// datastructuur copy
 SchaakStuk* Game::getPiece_copy(const int r,const int k) const {
     // Hier komt jouw code om op te halen welk stuk op rij r, kolom k staat
     SchaakStuk* piece = copy[r][k];
@@ -639,92 +687,12 @@ vector<pair<int,int>> Game::King_Under_attack(zw kleur)
     }
     for (auto move : Square_under_attack)
     {
-        cout << "following square are under attack: (" << move.first << "," << move.second << ")";
+        //cout << "following square are under attack: (" << move.first << "," << move.second << ")";
     }
     return Square_under_attack;
 }
 
-
-void Game::Pinned_this_piece(zw kleur)
-{
-    vector<SchaakStuk*> line_of_seight;
-    vector<pair<int,int>> all_moves;
-    for (int i=0; i<=7;i++)
-    {
-        for (int j=0; j<=7;j++)
-        {
-            if (this->getPiece(i,j) == nullptr)
-            {
-                continue;
-            }
-            else if (this->getPiece(i,j)->getTypePiece() == "rook" and this->getPiece(i,j)->getKleur() != kleur)
-            {
-                all_moves = this->getPiece(i,j)->line_of_sight_rook(*this);
-                for (auto move : all_moves)
-                {
-
-                    if (kleur == wit)
-                    {
-                        if(move.first == White_king.getR() and move.second == White_king.getK())
-                        {
-                            break;
-                        }
-                        if (move.first == White_king.getR() or move.second == White_king.getK())
-                        {
-                            line_of_seight.push_back(this->getPiece(move.first,move.second));
-                        }
-                    }
-                    if (kleur == zwart)
-                    {
-                        if(move.first == Black_King.getR() and move.second == Black_King.getK())
-                        {
-                            break;
-                        }
-                        if (move.first == Black_King.getR() or move.second == Black_King.getK())
-                        {
-                            line_of_seight.push_back(this->getPiece(move.first,move.second));
-                        }
-                    }
-                }
-                if (!line_of_seight.empty()){
-                    bool found_peice = false;
-                    SchaakStuk *s = nullptr;
-                    for(int c=0; c <= line_of_seight.size()-1;c++)
-                    {
-                        if (line_of_seight[c] != nullptr)
-                        {
-                            if (line_of_seight[c]->getKleur() != kleur and !found_peice)
-                            {
-                                cout << "piece found" << endl;
-                                found_peice = true;
-                                s = line_of_seight[c];
-                            }
-                            else if (line_of_seight[c] != line_of_seight[line_of_seight.size()])
-                            {
-                                break;
-                            }
-                            cout << line_of_seight[c]->getTypePiece() << endl;
-                        }
-                        if (c == line_of_seight.size()-1)
-                        {
-                            if (s != nullptr){
-
-                                cout << s->getTypePiece() << " is pinned" << endl;
-                            }
-                        }
-                    }
-
-                    line_of_seight.clear();
-                }
-            }
-            else if (this->getPiece(i,j)->getTypePiece() == "bishop" and this->getPiece(i,j)->getKleur() == kleur)
-            {
-
-            }
-        }
-    }
-}
-
+// hulp functie om te zien welke square zijn bedreigd naast de king
 bool Game::afstand_tot_king(SchaakStuk *king, int r, int k)
 {
     int temp_r = 0;
@@ -776,6 +744,7 @@ bool Game::afstand_tot_king(SchaakStuk *king, int r, int k)
     return false;
 }
 
+// om te zien welke squares worden bedreigt
 vector<pair<int,int>> Game::threatMap(const zw kleur)
 {
     vector<pair<int,int>> threat;
@@ -806,6 +775,11 @@ vector<pair<int,int>> Game::threatMap(const zw kleur)
     return threat;
 }
 
+// Computer AI: Prioriteiten -> schaak,stuk slaan,random moves
+// mag geen moves die eigen koning in schaak laat
+// performatie is niet goed bij schaak,want er wordt een random move gedaan
+// en dan gecheck of het nog in schaak is.
+
 tuple<int,int,int,int> Game::AI()
 {
     for(int i=0;i<8;i++)
@@ -816,38 +790,107 @@ tuple<int,int,int,int> Game::AI()
                 if(bord[i][j]->getKleur() == zwart)
                 {
                     this->Make_copy();
-                    for (auto move :this->getPiece_copy(i,j)->geldige_zetten(*this))
+                    for (auto move :this->getPiece_copy(i,j)->geldige_zetten_copy(*this))
                     {
                         this->move_copy(this->getPiece_copy(i,j),move.first,move.second);
-                        if (get<1>(this->schaak(wit)))
+                        if (get<1>(this->schaak_copy(wit)))
                         {
                             delete_copy();
-                            return make_tuple(i,j,move.first,move.second);
+                            //cout << i << " schaak  " << j << endl;
+                            tuple<int,int,int,int> result = make_tuple(i,j,move.first,move.second);
+                            return result;
                         }
-                        else if (this->getPiece_copy(move.first,move.second) != nullptr)
-                        {
-
+                        else{
                             delete_copy();
-                            return make_tuple(i,j,move.first,move.second);
+                            Make_copy();}
+                    }
+                    delete_copy();
+                }
+            }
+        }
+    }
+    Make_copy();
+    for(int i=0;i<8;i++)
+    {
+        for(int j=0;j<8;j++)
+        {
+            if (bord[i][j] != nullptr){
+                if (this->getPiece_copy(i,j)->getKleur() == zwart){
+                    for (auto move: this->getPiece_copy(i,j)->geldige_zetten_copy(*this))
+                    {
+                        if (this->getPiece_copy(move.first,move.second) != nullptr)
+                        {
+                            if (this->getPiece_copy(move.first,move.second)->getKleur() != zwart){
+                                delete_copy();
+                                //cout << i << "  d    " << j << endl;
+                                tuple<int,int,int,int> result = make_tuple(i,j,move.first,move.second);
+                                return result;
+                            }
                         }
-                        else{delete_copy();}
+                        else{delete_copy();
+                            Make_copy();}
                     }
                 }
             }
         }
     }
-    bool Not_moved = false;
+    delete_copy();
+    bool Not_moved = true;
+    tuple<int,int,int,int> result;
     while(Not_moved)
-    {
-        int i = rand()%8+1;
-        int j = rand()%8+1;
-        if (bord[i][j] != nullptr)
         {
-            for (auto move : bord[i][j]->geldige_zetten(*this))
-            {
-                return make_tuple(i,j,move.first,move.second);
-            }
+            int i = rand()%8;
+            int j = rand()%8;
 
+            if (bord[i][j] != nullptr and bord[i][j]->getKleur() ==zwart)
+            {
+
+                if (!bord[i][j]->geldige_zetten(*this).empty())
+                {
+                    result = make_tuple(i,j,bord[i][j]->geldige_zetten(*this)[0].first,bord[i][j]->geldige_zetten(*this)[0].second);
+                    //cout << "computer moves from: (" << get<0>(result) << ", " << get<1>(result) << ") -> (" << get<2>(result) << ", "  << get<3>(result) << ")\n";
+                    Not_moved = false;
+                }
+            }
+            /*
+            if (get<1>(this->schaak(zwart)))
+            {
+                i = get<1>(this->schaak(zwart));
+                j = get<1>(this->schaak(zwart));
+                result = make_tuple(i,j,bord[i][j]->geldige_zetten(*this)[0].first,bord[i][j]->geldige_zetten(*this)[0].second);
+                return result;
+            }
+             */
+        }
+    return result;
+}
+
+
+// hulp functie om te zien of stuk kan worden geslaan
+vector<pair<int,int>> Game::CanBeTaken(zw kleur)
+{
+    vector<pair<int,int>> result;
+    for (int i=0;i<=7;i++)
+    {
+        for(int j=0;j<=7;j++)
+        {
+            if (bord[i][j] != nullptr)
+            {
+                if (bord[i][j]->getKleur() == kleur)
+                {
+                    for(auto it : bord[i][j]->geldige_zetten(*this))
+                    {
+                        if (bord[it.first][it.second] != nullptr)
+                        {
+                            if(bord[it.first][it.second]->getKleur() != kleur)
+                            {
+                                result.push_back(it);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
+    return result;
 }

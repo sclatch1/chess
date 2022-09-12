@@ -123,6 +123,12 @@
 			"Mu",
 			"C3EZHT2PJ7/moc_resources.cpp",
 			null
+		],
+		[
+			"/Users/davidscalais/Desktop/IP /chess/utilities.h",
+			"Mu",
+			"EWIEGA46WW/moc_utilities.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],

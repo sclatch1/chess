@@ -29,12 +29,13 @@ public:
     tuple<SchaakStuk*,bool> schaak_copy(const zw kleur);
     SchaakStuk* getPiece(int r,int k) const;
     void setPiece(int r, int k, SchaakStuk* s);
+    bool NoMove(SchaakStuk *s);
     bool moveIsPossible(SchaakStuk* s, int r, int k);
     tuple<int,int,int,int> AI();
     vector<pair<int,int>> King_Under_attack(zw kleur);
     static bool afstand_tot_king(SchaakStuk *king, int r, int k);
-    void Pinned_this_piece(zw kleur);
     vector<pair<int,int>> threatMap(const zw kleur);
+    vector<pair<int,int>> CanBeTaken(zw kleur);
 
 // Hier zet jij jouw datastructuur neer om het bord te bewaren ...
     void Make_copy();

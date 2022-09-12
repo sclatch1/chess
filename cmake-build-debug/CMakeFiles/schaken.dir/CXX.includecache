@@ -23,6 +23,8 @@ iostream
 -
 algorithm
 -
+unistd.h
+/Users/davidscalais/Desktop/IP /chess/unistd.h
 
 /Users/davidscalais/Desktop/IP /chess/SchaakGUI.h
 guicode/ChessWindow.h

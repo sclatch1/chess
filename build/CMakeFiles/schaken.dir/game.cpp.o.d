@@ -316,4 +316,5 @@ CMakeFiles/schaken.dir/game.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bsd_locale_defaults.h \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/bitset
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/bitset \
+  /Users/davidscalais/Desktop/IP\ /chess/utilities.h

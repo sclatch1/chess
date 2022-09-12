@@ -7,6 +7,7 @@
 #include "guicode/fileIO.h"
 #include <iostream>
 #include <algorithm>
+#include "unistd.h"
 
 char to_char(string input);
 
@@ -33,18 +34,30 @@ void SchaakGUI::clicked(int r, int k) {
     clicks ++;
     if (turn%2 == 0)
     {
-        cout << "wit" << endl;
+        //cout << "wit" << endl;
         kleur = wit;
     }
     else if (turn%2 == 1)
     {
-        cout << "zwart" << endl;
+        //cout << "zwart" << endl;
         kleur = zwart;
     }
-
+    if (displayKills()){
+        for(auto it : g.CanBeTaken(zwart))
+        {
+            //cout << "threating: " << it.first << " " << it.second << endl;
+            setPieceThreat(it.first,it.second,true);
+        }
+        for(auto it : g.CanBeTaken(wit))
+        {
+            //cout << "threating: " << it.first << " " << it.second << endl;
+            setPieceThreat(it.first,it.second,true);
+        }
+    }
     if(schaak)
     {
         // check if a color is in checkmate
+        /*
         if(get<1>(g.schaak(zwart)))
         {
             if (g.schaakmat(zwart))
@@ -53,6 +66,7 @@ void SchaakGUI::clicked(int r, int k) {
                 return;
             }
         }
+         */
         if(get<1>(g.schaak(wit)))
         {
             if (g.schaakmat(wit))
@@ -62,358 +76,253 @@ void SchaakGUI::clicked(int r, int k) {
             }
         }
     }
-    /*
-    if (schaak)
+
+
+    if(kleur == zwart)
     {
+        //cout << "zwart\n";
+        g.Make_copy();
+        bool check = true;
+        while (check){
+            tuple<int,int,int,int> result = g.AI();
+            g.Make_copy();
+            int S_i = get<0>(result);
+            int S_j = get<1>(result);
+            int D_i = get<2>(result);
+            int D_j = get<3>(result);
+            g.move_copy(g.getPiece_copy(S_i,S_j),D_i,D_j);
+            if(!get<1>(g.schaak_copy(zwart))){check = false;}
+            if (!check){
+                //cout << "computer moves from: (" << S_i << ", " << S_j << ") to (" << D_i << ", "<< D_j << ") \n";
+                g.move(g.getPiece(S_i,S_j),D_i,D_j);
+            }
+
+            if(get<1>(g.schaak(zwart))){
+                if(g.schaakmat(zwart)){
+                    message("zwart in schaakmat");
+                    return;}
+            }
+
+
+            g.delete_copy();
+        }
+        g.delete_copy();
+        if(displayKills()){
+            for(auto it : g.CanBeTaken(zwart))
+            {
+                //cout << "threating: " << it.first << " " << it.second << endl;
+                setPieceThreat(it.first,it.second,false);
+            }
+        }
+        kleur = wit;
+        turn++;
+        clicks=0;
+        update();
+        schaak = false;
+        if (get<1>(g.schaak(zwart)))
+        {
+            schaak = true;
+            message("zwart is in check");
+        }
+        if (get<1>(g.schaak(wit)))
+        {
+            schaak = true;
+            message("wit is in check");
+        }
+        return;
+    }
+    else{
         if(clicks == 1)
         {
 
-            // if clicked on empty square, nothing happen
             if (g.getPiece(r,k) == nullptr)
             {
                 clicks = 0;
                 return;
             }
-            // if it is the right color, save the Piece in s;
             if (g.getPiece(r,k) != nullptr && g.getPiece(r,k)->getKleur() == kleur)
             {
+                //cout << "nieuw piece: " << g.getPiece(r,k)->getTypePiece() <<endl;
                 s = g.getPiece(r,k);
-                this->setTileSelect(r,k,true);
+                if(displayMoves()){
+                    this->setTileSelect(r,k,true);
+
+                    auto threatMap = g.threatMap(kleur);
+                    for (auto move : s->geldige_zetten(g))
+                    {
+                        /*
+                        auto p = std::find(threatMap.begin(),threatMap.end(),move);
+                        if (p == threatMap.end()){
+                                this->setTileThreat(move.first,move.second,true);
+                            }
+                        else{this->setTileFocus(move.first,move.second,true); }
+                         */
+                        this->setTileFocus(move.first,move.second,true);
+                    }
+                }
+                return;
             }
             else{
                 clicks = 0;
                 return;
             }
-
         }
+
         if (clicks == 2)
         {
 
-            // if clicked again on the same piece
             if(s->getR() == r and s->getK() == k)
             {
-                s = nullptr;
-                this->setTileSelect(r,k,false);
-                clicks = 0;
-            }
-            else{
-                // first check if moving is possible, without actually moving
-                if (g.moveIsPossible(s,r,k) && s->getKleur() == kleur)
-                {
-                    // if
-                    g.Make_copy();
-                    g.delete_copy();
-                    //g.move_copy(s,r,k);
-                    cout << get<1>(g.schaak_copy(this->kleur)) << endl;
-                    if(!get<1>(g.schaak_copy(this->kleur))){
-                        //g.delete_copy();
-                        this->setTileSelect(s->getR(),s->getK(),false);
-                        for (auto move : s->geldige_zetten(g))
-                        {
-                            this->setTileFocus(move.first,move.second,false);
-                        }
-                        if(!g.move(s,r,k))
-                        {
-                        //cout << "no moves" << endl;
-                            update();
-                            clicks = 0;
-                            return;
-                        }
 
-                        update();
+                    s = nullptr;
+                    if(displayMoves()){
+                    this->setTileSelect(r,k,false);
 
-                        turn++;
-                        schaak = false;
-                        clicks = 0;
-                        return;
-                    }
-                    else
+                    //auto threatMap = g.threatMap(kleur);
+                    for (auto move : g.getPiece(r,k)->geldige_zetten(g))
                     {
-                        //g.delete_copy();
-                        this->setTileSelect(s->getR(),s->getK(),false);
-                        for (auto move : s->geldige_zetten(g))
-                        {
-                            this->setTileFocus(move.first,move.second,false);
+
+                        /*
+                        auto p = std::find(threatMap.begin(),threatMap.end(),move);
+                        if (p == threatMap.end()){
+                            this->setTileThreat(move.first,move.second,false);
                         }
-                        schaak = true;
-                        clicks = 0;
-                        return;
+                        else{this->setTileFocus(move.first,move.second,true); }
+                        */
+                        this->setTileFocus(move.first,move.second,false);
+
+
                     }
                 }
-            }
-        }
-
-    }
-
-    if(clicks == 1)
-        {
-            if (g.getPiece(r,k) == nullptr)
-            {
-                //cout << "is pin" << endl;
                 clicks = 0;
                 return;
-            }
-            if (g.getPiece(r,k) != nullptr && g.getPiece(r,k)->getKleur() == kleur)
-            {
-                cout << "nieuw piece: " << g.getPiece(r,k)->getTypePiece() <<endl;
-                s = g.getPiece(r,k);
-                this->setTileSelect(r,k,true);
-                auto threatMap = g.threatMap(kleur);
-                for (auto move : s->geldige_zetten(g))
-                {
-
-                    cout << "move: " <<  move.first << " " << move.second <<endl;
-
-                    vector<pair<int,int>>::iterator p = std::find(threatMap.begin(),threatMap.end(),move);
-                    if (p != threatMap.end()){
-                        this->setTileThreat(move.first,move.second,true);
-                        cout << g.threatMap(kleur).size() <<endl;
-                        cout << "found: " <<  p->first << " " << p->second <<endl;
-                    }
-                    else{
-                        this->setTileFocus(move.first,move.second,true);
-                    }
-
-                }
-            }
-            else{
-                clicks = 0;
-                return;
-            }
-        }
-
-    if (clicks == 2)
-        {
-            if(s->getR() == r and s->getK() == k)
-            {
-                s = nullptr;
-                this->setTileSelect(r,k,false);
-                for (auto move : g.getPiece(r,k)->geldige_zetten(g))
-                {
-
-                    auto p = std::find(g.threatMap(kleur).begin(),g.threatMap(kleur).end(),move);
-                    if (p == g.threatMap(kleur).end()){
-                        this->setTileThreat(move.first,move.second,false);
-                    }
-
-                    this->setTileFocus(move.first,move.second,false);
-                }
-                clicks = 0;
-
             }
             else{
                 for (auto it : s->geldige_zetten(g))
                 {
                     //cout << "r: " << it.first << " k: " << it.second << endl;
                 }
+                if (displayMoves()){
+                    this->setTileSelect(s->getR(),s->getK(),false);
+                    //auto threatMap = g.threatMap(kleur);
+                    for (auto move : g.getPiece(s->getR(),s->getK())->geldige_zetten(g))
+                    {
+                        /*
+                        auto p = std::find(threatMap.begin(),threatMap.end(),move);
+                        if (p == threatMap.end()){
+                            this->setTileThreat(move.first,move.second,false);
+                        }
+                        else{this->setTileFocus(move.first,move.second,true); }
+                         */
+                        this->setTileFocus(move.first,move.second,false);
+
+
+                    }
+                }
+                if(displayKills()){
+                    for(auto it : g.CanBeTaken(wit))
+                    {
+                        //cout << "threating: " << it.first << " " << it.second << endl;
+                        setPieceThreat(it.first,it.second,false);
+                    }
+                }
                 if (g.moveIsPossible(s,r,k) && s->getKleur() == kleur)
                 {
-                    g.Make_copy();
-                    g.move_copy(s,r,k);
-                    if(!get<1>(g.schaak_copy(this->kleur))){
-                        //g.delete_copy();
-                        this->setTileSelect(s->getR(),s->getK(),false);
-                        for (auto move : s->geldige_zetten(g))
+                    if(schaak){
+                        g.Make_copy();
+                        g.move_copy(g.getPiece_copy(s->getR(),s->getK()),r,k);
+                        if (s->getTypePiece() == "Qw")
                         {
-                            this->setTileFocus(move.first,move.second,false);
+                            //cout << "queen";
                         }
-                        if(!g.move(s,r,k))
-                        {
-                            //cout << "no moves" << endl;
-                            update();
-                            clicks = 0;
-                            return;
-                        }
-                        turn++;
-                        clicks = 0;
-                        update();
-                        if (get<1>(g.schaak(zwart)))
-                        {
-                            schaak = true;
-                            message("zwart is in check");
-                        }
-                        if (get<1>(g.schaak(wit)))
-                        {
-                            schaak = true;
-                            message("wit is in check");
-                        }
-                    }
-                    else
-                    {
-                        //g.delete_copy();
-                        this->setTileSelect(s->getR(),s->getK(),false);
-                        for (auto move : s->geldige_zetten(g))
-                        {
-                            this->setTileFocus(move.first,move.second,false);
-                        }
-                        clicks = 0;
-                        return;
-                    }
-                }
-            }
-        }
-    */
-
-
-    if(clicks == 1)
-    {
-        if (g.getPiece(r,k) == nullptr)
-        {
-            clicks = 0;
-            return;
-        }
-        if (g.getPiece(r,k) != nullptr && g.getPiece(r,k)->getKleur() == kleur)
-        {
-            cout << "nieuw piece: " << g.getPiece(r,k)->getTypePiece() <<endl;
-            s = g.getPiece(r,k);
-            this->setTileSelect(r,k,true);
-            //auto threatMap = g.threatMap(kleur);
-            for (auto move : s->geldige_zetten(g))
-            {
-                /*
-                auto p = std::find(threatMap.begin(),threatMap.end(),move);
-                if (p == threatMap.end()){
-                        this->setTileThreat(move.first,move.second,true);
-                    }
-                else{this->setTileFocus(move.first,move.second,true); }
-                 */
-                this->setTileFocus(move.first,move.second,true);
-            }
-            return;
-        }
-        else{
-            clicks = 0;
-            return;
-        }
-    }
-
-    if (clicks == 2)
-    {
-        if(s->getR() == r and s->getK() == k)
-        {
-            s = nullptr;
-            this->setTileSelect(r,k,false);
-
-            //auto threatMap = g.threatMap(kleur);
-            for (auto move : g.getPiece(r,k)->geldige_zetten(g))
-            {
-
-                    /*
-                    auto p = std::find(threatMap.begin(),threatMap.end(),move);
-                    if (p == threatMap.end()){
-                        this->setTileThreat(move.first,move.second,false);
-                    }
-                    else{this->setTileFocus(move.first,move.second,true); }
-                    */
-                    this->setTileFocus(move.first,move.second,false);
-
-
-            }
-            clicks = 0;
-
-        }
-        else{
-            for (auto it : s->geldige_zetten(g))
-            {
-                //cout << "r: " << it.first << " k: " << it.second << endl;
-            }
-            this->setTileSelect(s->getR(),s->getK(),false);
-            //auto threatMap = g.threatMap(kleur);
-            for (auto move : g.getPiece(s->getR(),s->getK())->geldige_zetten(g))
-            {
-                    /*
-                    auto p = std::find(threatMap.begin(),threatMap.end(),move);
-                    if (p == threatMap.end()){
-                        this->setTileThreat(move.first,move.second,false);
-                    }
-                    else{this->setTileFocus(move.first,move.second,true); }
-                     */
-                    this->setTileFocus(move.first,move.second,false);
-
-
-            }
-            if (g.moveIsPossible(s,r,k) && s->getKleur() == kleur)
-            {
-                if(schaak){
-                    g.Make_copy();
-                    g.move_copy(g.getPiece_copy(s->getR(),s->getK()),r,k);
-                    if (s->getTypePiece() == "Qw")
-                    {
-                        //cout << "queen";
-                    }
-                    if(!get<1>(g.schaak_copy(zwart)) and !get<1>(g.schaak_copy(wit))){
-                        g.delete_copy();
-                        this->setTileSelect(s->getR(),s->getK(),false);
-                        for (auto move : s->geldige_zetten(g))
-                        {
-                            this->setTileFocus(move.first,move.second,false);
-                        }
-                        if(!g.move(s,r,k))
-                        {
-                            //cout << "no moves" << endl;
-                            update();
-                            clicks = 0;
-                            return;
-                        }
-                        schaak = false;
-                        turn++;
-                        clicks = 0;
-                        update();
-                    }
-                    else
-                    {
-                        g.delete_copy();
-                        this->setTileSelect(s->getR(),s->getK(),false);
-                        for (auto move : g.getPiece(s->getR(),s->getK())->geldige_zetten(g))
-                        {
-                            /*
-                            auto p = std::find(threatMap.begin(),threatMap.end(),move);
-                            if (p == threatMap.end()){
-                                this->setTileThreat(move.first,move.second,false);
+                        if(!get<1>(g.schaak_copy(zwart)) and !get<1>(g.schaak_copy(wit))){
+                            g.delete_copy();
+                            if (displayMoves()){
+                                this->setTileSelect(s->getR(),s->getK(),false);
+                                for (auto move : s->geldige_zetten(g))
+                                {
+                                    this->setTileFocus(move.first,move.second,false);
+                                }
                             }
-
-                            else{this->setTileFocus(move.first,move.second,true); }*/
-                            this->setTileFocus(move.first,move.second,false);
-
+                            if(!g.move(s,r,k))
+                            {
+                                //cout << "no moves" << endl;
+                                update();
+                                clicks = 0;
+                                return;
+                            }
+                            schaak = false;
+                            turn++;
+                            clicks = 0;
+                            kleur = zwart;
+                            update();
                         }
-                        clicks = 0;
-                        return;
+                        else
+                        {
+                            g.delete_copy();
+                            if(displayMoves()){
+                                this->setTileSelect(s->getR(),s->getK(),false);
+                                for (auto move : g.getPiece(s->getR(),s->getK())->geldige_zetten(g))
+                                {
+                                    /*
+                                    auto p = std::find(threatMap.begin(),threatMap.end(),move);
+                                    if (p == threatMap.end()){
+                                        this->setTileThreat(move.first,move.second,false);
+                                    }
+
+                                    else{this->setTileFocus(move.first,move.second,true); }*/
+                                    this->setTileFocus(move.first,move.second,false);
+
+                                }
+                            }
+                            clicks = 0;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        g.Make_copy();
+                        g.move_copy(g.getPiece_copy(s->getR(),s->getK()),r,k);
+
+                        if (kleur == wit){
+                            if(!get<1>(g.schaak_copy(wit))){
+                                g.delete_copy();
+                                if(!g.move(s,r,k))
+                                {
+                                    //cout << "no moves" << endl;
+                                    update();
+                                    clicks = 0;
+                                    return;
+                                }
+                                turn++;
+                                clicks = 0;
+                                update();
+                                kleur = zwart;
+                                if (get<1>(g.schaak(zwart)))
+                                {
+                                    schaak = true;
+                                    message("zwart is in check");
+                                }
+                                if (get<1>(g.schaak(wit)))
+                                {
+                                    schaak = true;
+                                    message("wit is in check");
+                                }
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            clicks = 0;
+                            return;
+                        }
                     }
                 }
+
                 else
                 {
-                    g.Make_copy();
-                    g.move_copy(g.getPiece_copy(s->getR(),s->getK()),r,k);
-
-                    if(!get<1>(g.schaak_copy(this->kleur))){
-                        g.delete_copy();
-                        if(!g.move(s,r,k))
-                        {
-                            //cout << "no moves" << endl;
-                            update();
-                            clicks = 0;
-                            return;
-                        }
-                        turn++;
-                        clicks = 0;
-                        update();
-                        if (get<1>(g.schaak(zwart)))
-                        {
-                            schaak = true;
-                            message("zwart is in check");
-                        }
-                        if (get<1>(g.schaak(wit)))
-                        {
-                            schaak = true;
-                            message("wit is in check");
-                        }
-                        return;
-                    }
-                    else
-                    {
-                        clicks = 0;
-                        return;
-                    }
+                    clicks = 0;
+                    return;
                 }
             }
         }
@@ -632,6 +541,6 @@ void SchaakGUI::update()
             }
         }
     }
-
+    removeAllMarking();
 }
 

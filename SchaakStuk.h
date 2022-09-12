@@ -27,9 +27,6 @@ public:
 
 
 private:
-    vector<pair<int,int>> zetten_van_tegenstander;
-    bool pin= false;
-    bool is_protected= false;
     string typePiece;
     string typePiece_copy;
 
@@ -65,10 +62,6 @@ public:
 
 
     void setTypePiece(const string &typePiece);
-
-    vector<pair<int,int>> line_of_sight_rook(Game &game);
-
-    vector<pair<int,int>> line_of_sight_bishop(Game &game);
 
     int getR() const;
 
